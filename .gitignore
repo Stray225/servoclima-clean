@@ -1,0 +1,21 @@
+# Node / Next
+node_modules/
+.next/
+out/
+dist/
+
+# Logs
+*.log
+
+# Sistema / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Env
+.env
+.env.local
+.env.*.local
+
+servoclima-clean
