@@ -2,6 +2,8 @@
 import Image from "next/image";
 import TrustBar from "@/components/TrustBar";
 import HeroSlider from "@/components/HeroSlider";
+import ContactForm from "@/components/ContactForm";
+
 
 const WHATS = "54911XXXXXXXX";
 const TEL = "+5411XXXXXXXX";
@@ -29,7 +31,7 @@ export default function Page() {
 
           <div className="mt-6 flex flex-wrap gap-3">
             <a
-              href="#cotizacion-empresarial"
+              href="#cotizacion"
               className="bg-gray-900 hover:bg-black text-white px-5 py-3 rounded-lg font-medium"
             >
               Solicitar cotización empresarial
@@ -50,6 +52,7 @@ export default function Page() {
             >
               WhatsApp
             </a>
+            
           </div>
 
           <ul className="mt-4 text-gray-600 dark:text-slate-300 space-y-1">
@@ -58,6 +61,7 @@ export default function Page() {
             <li>✅ Cobertura CABA y Zona Sur</li>
           </ul>
         </div>
+        
 
         {/* Slider de fotos en el hero */}
         <HeroSlider />
@@ -174,7 +178,9 @@ export default function Page() {
             ></iframe>
           </div>
         </div>
-
+<div id="cotizacion">
+              <ContactForm />
+            </div>
         {/*  */}
         {/*  */}
       </section>
