@@ -150,31 +150,33 @@ export default function Page() {
 
       {/* MAPA + FORMULARIOS */}
       <section className="max-w-6xl mx-auto px-4 py-12">
-        {/* Título + mapa horizontal */}
+        {/* */}
         <h2 className="text-3xl font-bold mb-1">Zonas de cobertura</h2>
         <p className="text-slate-600 dark:text-slate-300 mb-4">
           Zona Sur (Avellaneda, Quilmes, Berazategui, etc.), CABA y La Plata.
         </p>
 
         <div className="rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-sm mb-10 relative">
-          {/* Badge sobre el mapa */}
+          {/* */}
           <div className="absolute z-10 top-4 left-4 bg-white/90 dark:bg-slate-900/90 backdrop-blur px-4 py-1 rounded-full text-xs font-medium text-slate-700 dark:text-slate-100 shadow-sm">
             Zona Sur • CABA • La Plata
-          </div>
+        </div>
 
           <div className="aspect-[16/6] w-full">
             <iframe
-              title="Cobertura Zona Sur, CABA y La Plata"
-              src="AQUI_VA_TU_LINK_DE_GOOGLE_MAPS"
-              className="w-full h-full border-0"
-              loading="lazy"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d209794.10868131887!2d-58.34561857630391!3d-34.75476283456972!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a32e38e45f5777%3A0x6a86dac21334524f!2sQuilmes%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1763227396945!5m2!1ses!2sar"
+              width="100%"
+              height="450"
+              style={{ border: 0 }}
               allowFullScreen
-            />
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
           </div>
         </div>
 
-        {/* FORMULARIOS IGUALES A LO QUE YA TENÍAS */}
-        {/* ... (dejé todo igual desde acá para abajo, lo podés mantener tal cual) */}
+        {/*  */}
+        {/*  */}
       </section>
     </main>
   );

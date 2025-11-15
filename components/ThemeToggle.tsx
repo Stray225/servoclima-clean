@@ -1,4 +1,4 @@
-// components/ThemeToggle.tsx
+// 
 "use client";
 
 import { useEffect, useState } from "react";
@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 export default function ThemeToggle() {
   const [isDark, setIsDark] = useState(false);
 
-  // Cargar preferencia inicial
+  // 
   useEffect(() => {
     if (typeof window === "undefined") return;
 

@@ -11,7 +11,7 @@ export default function Navbar() {
         {/* LOGO + SUBTÍTULO */}
         <Link href="/" className="flex items-center gap-3">
           <Image
-            src="/serviclima-logo.png"  // poné tu logo rectangular acá
+            src="/serviclima-logo.png"  //
             alt="Serviclima"
             width={140}
             height={40}

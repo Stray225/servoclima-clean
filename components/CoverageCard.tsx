@@ -1,6 +1,6 @@
-// components/CoverageCard.tsx
+// 
 export default function CoverageCard() {
-  // Embed simple centrado en CABA/GBA (z=10). Sin API Key, sin 404.
+  // .
   const src =
     "https://maps.google.com/maps?q=Buenos%20Aires%20Argentina&z=10&ie=UTF8&iwloc=&output=embed";
 
