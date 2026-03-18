@@ -35,7 +35,6 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  // JSON-LD LocalBusiness
   const localBusiness = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
@@ -50,13 +49,22 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       addressCountry: "AR",
     },
     openingHoursSpecification: [
-      { "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday","Tuesday","Wednesday","Thursday","Friday"], opens: "08:00", closes: "19:00" },
-      { "@type": "OpeningHoursSpecification", dayOfWeek: "Saturday", opens: "09:00", closes: "14:00" },
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        opens: "08:00",
+        closes: "19:00",
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: "Saturday",
+        opens: "09:00",
+        closes: "14:00",
+      },
     ],
-    sameAs: [], // agrega Instagram si querés
+    sameAs: [],
   };
 
-  // JSON-LD FAQPage
   const faq = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -90,12 +98,25 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
   return (
     <html lang="es">
+      <head>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-18023933418"
+          strategy="afterInteractive"
+        />
+        <Script id="google-ads" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-18023933418');
+          `}
+        </Script>
+      </head>
       <body className="bg-slate-50 text-slate-900">
         <Navbar />
         {children}
         <Footer />
 
-        {/* JSON-LD inline */}
         <Script id="ld-localbusiness" type="application/ld+json">
           {JSON.stringify(localBusiness)}
         </Script>
