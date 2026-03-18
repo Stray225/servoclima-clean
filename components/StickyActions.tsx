@@ -12,7 +12,13 @@ export default function StickyActions({ tel, whats }: Props) {
           href={`https://wa.me/${whats}`}
           target="_blank"
           rel="noopener noreferrer"
-          onClick={() => trackConversion()}
+          onClick={(e) => {
+            e.preventDefault();
+            trackConversion();
+            setTimeout(() => {
+              window.open(`https://wa.me/${whats}`, "_blank", "noopener,noreferrer");
+            }, 300);
+          }}
           className="bg-green-500 py-3 text-center font-semibold"
         >
           WhatsApp
