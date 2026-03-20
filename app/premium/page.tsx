@@ -1,10 +1,10 @@
-// app/premium/page.tsx
-// Página premium B2B — archivos originales intactos
+// app/premium/page.tsx — versión premium B2B orientada a ejecutivos y técnicos corporativos
 import HeroSectionPremium from "@/components/premium/HeroSectionPremium";
 import StatsBannerPremium from "@/components/premium/StatsBannerPremium";
-import BrandsPremium from "@/components/premium/BrandsPremium";
 import ClientsPremium from "@/components/premium/ClientsPremium";
+import BrandsPremium from "@/components/premium/BrandsPremium";
 import ServicesPremium from "@/components/premium/ServicesPremium";
+import ProcessSectionPremium from "@/components/premium/ProcessSectionPremium";
 import WhyUsPremium from "@/components/premium/WhyUsPremium";
 import TestimonialsPremium from "@/components/premium/TestimonialsPremium";
 import ClientPortalPremium from "@/components/premium/ClientPortalPremium";
@@ -16,37 +16,40 @@ export default function PremiumPage() {
   return (
     <main className="bg-white text-slate-900 dark:bg-slate-950 dark:text-slate-50">
 
-      {/* 1. Hero — messaging corporativo */}
+      {/* Hero full-screen oscuro — impacto inmediato */}
       <HeroSectionPremium />
 
-      {/* 2. Stats — +15 años, +200 instalaciones, +50 empresas, 24/7 */}
+      {/* Métricas con contexto — credibilidad numérica */}
       <StatsBannerPremium />
 
-      {/* 3. Primeras marcas — Surrey, Daikin, Carrier, Trane... */}
-      <BrandsPremium />
-
-      {/* 4. Clientes — logos en B&N, color al hover */}
+      {/* Clientes — logos en B&N, color al hover */}
       <ClientsPremium />
 
-      {/* 5. Servicios — solapas: Instalaciones / Proyectos / Mantenimiento / Ingeniería */}
+      {/* Primeras marcas — Surrey, Daikin, Carrier... */}
+      <BrandsPremium />
+
+      {/* Servicios — solapas: Instalaciones / Proyectos / Mantenimiento / Ingeniería */}
       <ServicesPremium />
 
-      {/* 6. Por qué elegirnos — diferenciadores + sectores (con Laboratorio) */}
+      {/* Metodología — 4 pasos del proceso */}
+      <ProcessSectionPremium />
+
+      {/* Por qué elegirnos — diferenciadores duros */}
       <WhyUsPremium />
 
-      {/* 7. Testimonios */}
+      {/* Testimonios — ejecutivos y gerentes */}
       <TestimonialsPremium />
 
-      {/* 8. Portal de clientes — ingresá con usuario para ver tu último informe */}
+      {/* Portal de clientes — ver último informe */}
       <ClientPortalPremium />
 
-      {/* 9. Contacto — formulario enterprise */}
+      {/* Contacto — formulario enterprise + datos directos */}
       <ContactSectionPremium />
 
-      {/* 10. FAQ — acordeón enterprise */}
+      {/* FAQ — preguntas de ejecutivos y gerentes de compras */}
       <FAQPremium />
 
-      {/* 11. Mobile sticky — WhatsApp + Llamar (sin hogares al final) */}
+      {/* Mobile sticky */}
       <StickyActionsPremium />
 
     </main>

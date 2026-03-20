@@ -5,34 +5,37 @@ import Link from "next/link";
 
 export default function NavbarPremium() {
   return (
-    <header className="w-full sticky top-0 z-50 border-b border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-slate-900/95 backdrop-blur supports-[backdrop-filter]:bg-white/80 dark:supports-[backdrop-filter]:bg-slate-900/90">
-      <nav className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+    <header className="w-full sticky top-0 z-50 bg-slate-950/95 backdrop-blur border-b border-white/10 supports-[backdrop-filter]:bg-slate-950/80">
+      <nav className="max-w-7xl mx-auto px-6 py-0 flex items-center justify-between h-16">
 
-        {/* LOGO — más grande */}
-        <Link href="/" className="flex items-center gap-3">
+        {/* LOGO */}
+        <Link href="/" className="flex items-center gap-4">
           <Image
             src="/serviclima-logo.png"
             alt="Serviclima"
             width={190}
             height={56}
-            className="h-14 w-auto object-contain"
+            className="h-12 w-auto object-contain brightness-200"
             priority
           />
+          <div className="hidden lg:block w-px h-6 bg-white/20" />
+          <span className="hidden lg:block text-xs text-slate-400 tracking-wide">
+            Heating & Cooling S.R.L.
+          </span>
         </Link>
 
-        {/* NAV CENTRAL */}
-        <div className="hidden md:flex items-center gap-8">
+        {/* NAV */}
+        <div className="hidden md:flex items-center gap-6">
           {[
             { href: "#servicios", label: "Servicios" },
-            { href: "#proyectos", label: "Proyectos" },
-            { href: "#mantenimiento", label: "Mantenimiento" },
+            { href: "#proceso", label: "Metodología" },
             { href: "#clientes", label: "Clientes" },
             { href: "#faq", label: "FAQ" },
           ].map((item) => (
             <a
               key={item.label}
               href={item.href}
-              className="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-blue-700 dark:hover:text-blue-400 transition"
+              className="text-sm text-slate-400 hover:text-white transition font-medium"
             >
               {item.label}
             </a>
@@ -41,20 +44,20 @@ export default function NavbarPremium() {
 
         {/* DERECHA */}
         <div className="flex items-center gap-3">
-          <div className="hidden lg:flex items-center">
+          <div className="hidden lg:block">
             <Image
               src="/surrey-agente-navbar.png"
               alt="Agente Oficial Surrey"
-              width={110}
-              height={50}
-              className="object-contain opacity-90"
+              width={90}
+              height={40}
+              className="object-contain brightness-200 opacity-60"
             />
           </div>
           <a
             href="#cotizacion"
-            className="hidden sm:inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white font-semibold px-5 py-2.5 rounded-lg transition text-sm"
+            className="bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold px-5 py-2 rounded-lg transition text-sm"
           >
-            Consulta técnica
+            Agendar evaluación
           </a>
         </div>
 
