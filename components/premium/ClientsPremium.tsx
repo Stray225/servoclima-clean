@@ -1,14 +1,14 @@
 import Image from "next/image";
 
 const CLIENTS = [
-  { src: "/iconos/coca.png", name: "Coca-Cola", sector: "Industria alimenticia" },
-  { src: "/iconos/iconoempresa4.png", name: "Nestlé", sector: "Alimentos y Bebidas" },
-  { src: "/iconos/parque.png", name: "Parque Avellaneda", sector: "Centro comercial" },
-  { src: "/iconos/gancia.png", name: "Gancia", sector: "Planta industrial" },
-  { src: "/iconos/barbieri.png", name: "Dapsa", sector: "Energía y combustibles" },
-  { src: "/iconos/bam.png", name: "Barbieri", sector: "Empresa" },
-  { src: "/iconos/puppis.png", name: "Puppis", sector: "Cadena retail" },
-  { src: "/iconos/sherwin.png", name: "Sherwin Williams", sector: "Industria química" },
+  { src: "/iconos/coca.png",         name: "Coca-Cola",        sector: "Industria alimenticia" },
+  { src: "/iconos/iconoempresa4.png", name: "Nestlé",           sector: "Alimentos y Bebidas" },
+  { src: "/iconos/gancia.png",       name: "Gancia",           sector: "Planta industrial" },
+  { src: "/iconos/barbieri.png",     name: "Dapsa",            sector: "Energía y combustibles" },
+  { src: "/iconos/bam.png",          name: "Barbieri",         sector: "Empresa" },
+  { src: "/iconos/parque.png",       name: "Parque Avellaneda", sector: "Centro comercial" },
+  { src: "/iconos/puppis.png",       name: "Puppis",           sector: "Cadena retail" },
+  { src: "/iconos/sherwin.png",      name: "Sherwin Williams", sector: "Industria química" },
 ];
 
 export default function ClientsPremium() {
@@ -29,11 +29,12 @@ export default function ClientsPremium() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        {/* Grid — logos en blanco y negro, color al hover */}
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">
           {CLIENTS.map((c, i) => (
             <div
               key={i}
-              className="group bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 hover:border-blue-300 dark:hover:border-blue-700 rounded-2xl h-[160px] flex flex-col items-center justify-center gap-3 p-6 shadow-sm hover:shadow-md transition-all duration-200"
+              className="group bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 hover:border-blue-300 dark:hover:border-blue-700 rounded-2xl h-[150px] flex flex-col items-center justify-center gap-3 p-6 shadow-sm hover:shadow-lg transition-all duration-200"
             >
               <div className="relative w-full h-[80px]">
                 <Image
@@ -44,12 +45,16 @@ export default function ClientsPremium() {
                 />
               </div>
               <div className="text-center">
-                <p className="font-medium text-slate-700 dark:text-slate-300 text-xs">{c.name}</p>
+                <p className="font-semibold text-slate-700 dark:text-slate-300 text-xs">{c.name}</p>
                 <p className="text-xs text-slate-400 dark:text-slate-500">{c.sector}</p>
               </div>
             </div>
           ))}
         </div>
+
+        <p className="text-center text-xs text-slate-400 dark:text-slate-500">
+          Logos mostrados en escala de grises · hover para ver en color
+        </p>
 
       </div>
     </section>

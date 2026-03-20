@@ -8,24 +8,25 @@ export default function NavbarPremium() {
     <header className="w-full sticky top-0 z-50 border-b border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-slate-900/95 backdrop-blur supports-[backdrop-filter]:bg-white/80 dark:supports-[backdrop-filter]:bg-slate-900/90">
       <nav className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
 
-        {/* LOGO */}
+        {/* LOGO — más grande */}
         <Link href="/" className="flex items-center gap-3">
           <Image
             src="/serviclima-logo.png"
             alt="Serviclima"
-            width={140}
-            height={40}
-            className="h-9 w-auto object-contain"
+            width={190}
+            height={56}
+            className="h-14 w-auto object-contain"
             priority
           />
         </Link>
 
         {/* NAV CENTRAL */}
-        <div className="hidden md:flex items-center gap-7">
+        <div className="hidden md:flex items-center gap-8">
           {[
             { href: "#servicios", label: "Servicios" },
             { href: "#proyectos", label: "Proyectos" },
             { href: "#mantenimiento", label: "Mantenimiento" },
+            { href: "#clientes", label: "Clientes" },
             { href: "#faq", label: "FAQ" },
           ].map((item) => (
             <a
@@ -44,14 +45,14 @@ export default function NavbarPremium() {
             <Image
               src="/surrey-agente-navbar.png"
               alt="Agente Oficial Surrey"
-              width={100}
-              height={46}
+              width={110}
+              height={50}
               className="object-contain opacity-90"
             />
           </div>
           <a
             href="#cotizacion"
-            className="hidden sm:inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-4 py-2 rounded-lg transition"
+            className="hidden sm:inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white font-semibold px-5 py-2.5 rounded-lg transition text-sm"
           >
             Consulta técnica
           </a>

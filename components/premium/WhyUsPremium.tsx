@@ -7,15 +7,15 @@ const DIFFERENTIATORS = [
   },
   {
     title: "Documentación para auditorías",
-    desc: "Toda instalación entrega memoria técnica, planos y certificados. Su equipo de compliance lo agradecerá.",
+    desc: "Toda instalación entrega memoria técnica, planos y certificados. Su área de compliance lo agradecerá.",
   },
   {
     title: "Agente oficial Surrey",
-    desc: "Acceso directo a repuestos, garantías de fábrica y soporte técnico del fabricante.",
+    desc: "Acceso directo a repuestos originales, garantías de fábrica y soporte técnico del fabricante.",
   },
   {
     title: "Contratos de mantenimiento con SLA",
-    desc: "Respuesta programada y tiempos de atención acordados. Sin excusas ante una falla.",
+    desc: "Respuesta programada y tiempos de atención acordados en contrato. Sin excusas ante una falla.",
   },
 ];
 
@@ -24,6 +24,8 @@ const SECTORS = [
   "Edificios corporativos",
   "Parques logísticos",
   "Centros comerciales",
+  "Industrias de laboratorio",
+  "Plantas farmacéuticas",
   "Plantas productivas",
   "Consorcios premium",
 ];
@@ -34,7 +36,7 @@ export default function WhyUsPremium() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
 
-          {/* Izquierda: texto */}
+          {/* Izquierda */}
           <div>
             <p className="text-blue-600 dark:text-blue-400 text-sm uppercase tracking-widest font-medium mb-3">
               Por qué elegirnos
@@ -65,7 +67,7 @@ export default function WhyUsPremium() {
             </div>
           </div>
 
-          {/* Derecha: imagen + sectores */}
+          {/* Derecha */}
           <div className="space-y-4">
             <div className="rounded-2xl overflow-hidden shadow-xl">
               <Image
