@@ -16,7 +16,7 @@ const AREAS = [
 ];
 
 export const metadata: Metadata = {
-  title: "Serviclima | Climatización empresarial e instalación de splits",
+  title: "Nahuel | Serviclima | Climatización empresarial e instalación de splits",
   description:
     "Climatización para empresas, condominios y plantas: VRF/VRV, conductos y proyectos llave en mano. También instalación y service de splits. CABA y Zona Sur.",
   openGraph: {
