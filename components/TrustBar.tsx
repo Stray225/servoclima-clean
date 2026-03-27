@@ -2,19 +2,19 @@
 import Image from "next/image";
 
 const CLIENTS = [
-  { src: "/iconos/coca.png", name: "Coca-Cola", sector: "Industria alimenticia" },
-  { src: "/iconos/iconoempresa4.png", name: "Nestlé", sector: "Alimentos y Bebidas" },
-  { src: "/iconos/parque.png", name: "Parqué Avellaneda Shopping", sector: "Parque Shopping" },  
-  { src: "/iconos/gancia.png", name: "GANCIA", sector: "Planta industrial" },
-  { src: "/iconos/barbieri.png", name: "Dapsa", sector: "Energía y combustibles" },
-  { src: "/iconos/bam.png", name: "Barbieri", sector: "Empresa" },
-  { src: "/iconos/puppis.png", name: "Puppis", sector: "Empresa" },
-  { src: "/iconos/sherwin.png", name: "Sherwwin Williams", sector: "Desarrollo de pinturas" },
+  { src: "/iconos/coca.png",         name: "Coca-Cola",             sector: "Industria alimenticia" },
+  { src: "/iconos/iconoempresa4.png", name: "Nestlé",               sector: "Alimentos y Bebidas" },
+  { src: "/iconos/parque.png",        name: "Parque Avellaneda",    sector: "Centro comercial" },
+  { src: "/iconos/gancia.png",        name: "Gancia",               sector: "Planta industrial" },
+  { src: "/iconos/barbieri.png",      name: "Dapsa",                sector: "Energía y combustibles" },
+  { src: "/iconos/bam.png",           name: "Barbieri",             sector: "Empresa" },
+  { src: "/iconos/puppis.png",        name: "Puppis",               sector: "Cadena retail" },
+  { src: "/iconos/sherwin.png",       name: "Sherwin Williams",     sector: "Industria química" },
 ];
 
 export default function TrustBar() {
   return (
-    <section className="max-w-7xl mx-auto px-100 py-1">
+    <section className="max-w-7xl mx-auto px-6 py-1" aria-label="Clientes que confían en Serviclima">
 
       {/* Header */}
       <div className="text-center mb-3">
@@ -29,7 +29,6 @@ export default function TrustBar() {
 
       {/* Grid clientes */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-
         {CLIENTS.map((c, i) => (
           <div
             key={i}
@@ -44,18 +43,19 @@ export default function TrustBar() {
               hover:shadow-lg transition
             "
           >
-            {/* LOGO GRANDE */}
+            {/* LOGO */}
             <div className="relative flex-1 w-full">
               <Image
                 src={c.src}
-                alt={c.name}
+                alt={`${c.name} — cliente de Serviclima`}
                 fill
+                priority={i === 0}
                 className="object-contain"
-                priority
+                sizes="(max-width: 768px) 50vw, 25vw"
               />
             </div>
 
-            {/* TEXTO CHICO, DISCRETO */}
+            {/* TEXTO */}
             <div className="text-center mt-30">
               <p className="font-semibold text-slate-800 dark:text-slate-100 text-sm">
                 {c.name}
@@ -66,7 +66,6 @@ export default function TrustBar() {
             </div>
           </div>
         ))}
-
       </div>
     </section>
   );

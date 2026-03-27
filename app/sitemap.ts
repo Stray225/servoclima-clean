@@ -1,12 +1,20 @@
 import type { MetadataRoute } from 'next'
 
+const SITE_URL = 'https://serviclim.ar'
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = process.env.NEXT_PUBLIC_SITE_URL || 'https://serviclima.example'
-  const routes = ['', '/#servicios', '/#zonas', '/#contacto']
-  return routes.map((r) => ({
-    url: `${base}${r}`,
-    lastModified: new Date(),
-    changeFrequency: 'weekly',
-    priority: r === '' ? 1 : 0.6,
-  }))
+  return [
+    {
+      url: SITE_URL,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 1,
+    },
+    {
+      url: `${SITE_URL}/premium`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+  ]
 }

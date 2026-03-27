@@ -1,17 +1,35 @@
 // app/page.tsx
+import type { Metadata } from "next";
 import Image from "next/image";
 import HeroSlider from "@/components/HeroSlider";
 import TrustBar from "@/components/TrustBar";
 import ContactForm from "@/components/ContactForm";
+import StickyActions from "@/components/StickyActions";
 
-const WHATS = "54911XXXXXXXX";
+const WHATS = "5491123579760";
+const TEL = "+541123579760";
+
+export const metadata: Metadata = {
+  title: "Instalación y service de aire acondicionado · CABA y GBA",
+  description:
+    "Instalación de splits, VRF/VRV y sistemas centrales de aire acondicionado en CABA y GBA. Service, mantenimiento y reparación para empresas y hogares. Presupuesto sin cargo.",
+  alternates: {
+    canonical: "https://serviclim.ar",
+  },
+  openGraph: {
+    title: "Serviclima | Instalación y service de aire acondicionado · CABA y GBA",
+    description:
+      "Instalación de splits, VRF/VRV y sistemas centrales de aire acondicionado en CABA y GBA. Service y mantenimiento para empresas y hogares.",
+    url: "https://serviclim.ar",
+  },
+};
 
 export default function Page() {
   return (
     <main className="bg-slate-100 text-slate-900 dark:bg-slate-950 dark:text-slate-50">
 
       {/* ================= HERO ================= */}
-      <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-slate-900">
+      <section aria-label="Presentación" className="bg-gradient-to-br from-blue-900 via-blue-800 to-slate-900">
         <div className="max-w-7xl mx-auto px-6 py-24 grid lg:grid-cols-2 gap-16 items-center">
 
           <div>
@@ -39,7 +57,9 @@ export default function Page() {
               </a>
 
               <a
-                href={`https://wa.me/${WHATS}`}
+                href={`https://wa.me/${WHATS}?text=Hola%2C%20quiero%20consultar%20sobre%20climatizaci%C3%B3n.`}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg font-semibold transition"
               >
                 WhatsApp
@@ -55,45 +75,46 @@ export default function Page() {
       </section>
 
       {/* ================= CLIENTES ================= */}
-      <section className="bg-white dark:bg-slate-900 py-16">
-        <TrustBar />  
+      <section aria-label="Clientes" className="bg-white dark:bg-slate-900 py-16">
+        <TrustBar />
       </section>
 
       {/* ================= SERVICIOS ================= */}
-      <section className="bg-slate-50 dark:bg-slate-900 py-1">
+      <section id="servicios" aria-label="Servicios de climatización" className="bg-slate-50 dark:bg-slate-900 py-16">
         <div className="max-w-7xl mx-auto px-6">
 
-          <h2 className="text-4xl font-bold mb-4">Servicios</h2>
+          <h2 className="text-4xl font-bold mb-4">Servicios de climatización</h2>
 
           <p className="text-slate-700 dark:text-slate-300 max-w-2xl mb-14">
-            Soluciones técnicas de climatización diseñadas para entornos corporativos,
-            comerciales e industriales, con foco en operación continua y eficiencia.
+            Instalación, service y mantenimiento de aire acondicionado para
+            entornos corporativos, comerciales e industriales. También instalamos
+            splits y multisplits para hogares y oficinas en CABA y GBA.
           </p>
 
           {/* === 3 SERVICIOS GRANDES === */}
           <div className="grid lg:grid-cols-3 gap-10 mb-10">
 
             <div className="bg-white dark:bg-slate-950 rounded-2xl p-10 shadow-lg border">
-              <h3 className="text-2xl font-bold mb-4">Instalaciones</h3>
+              <h3 className="text-2xl font-bold mb-4">Instalación de aire acondicionado</h3>
               <p className="text-slate-600 dark:text-slate-300">
-                Sistemas VRF/VRV, chillers, rooftops, distribución de consumos,
-                salas de máquinas y centros de cómputos.
+                Splits, multisplits, VRF/VRV, chillers y rooftops. Instalación
+                con documentación técnica y garantía escrita en CABA y GBA.
               </p>
             </div>
 
             <div className="bg-white dark:bg-slate-950 rounded-2xl p-10 shadow-lg border">
-              <h3 className="text-2xl font-bold mb-4">Mantenimientos</h3>
+              <h3 className="text-2xl font-bold mb-4">Service y mantenimiento</h3>
               <p className="text-slate-600 dark:text-slate-300">
-                Programas correctivos y preventivos con contrato,
-                enfocados en continuidad operativa y reducción de fallas.
+                Service correctivo y preventivo de aire acondicionado con contrato.
+                Mantenimiento programado para empresas, condominios y plantas industriales.
               </p>
             </div>
 
             <div className="bg-white dark:bg-slate-950 rounded-2xl p-10 shadow-lg border">
-              <h3 className="text-2xl font-bold mb-4">Ingeniería</h3>
+              <h3 className="text-2xl font-bold mb-4">Ingeniería en climatización</h3>
               <p className="text-slate-600 dark:text-slate-300">
                 Cálculo térmico, documentación técnica,
-                especificaciones y soporte para auditorías.
+                especificaciones y soporte para auditorías y licitaciones.
               </p>
             </div>
 
@@ -101,9 +122,9 @@ export default function Page() {
 
           {/* === PROYECTOS FULL WIDTH === */}
           <div className="bg-blue-900 text-white rounded-2xl p-12 shadow-xl">
-            <h3 className="text-3xl font-bold mb-4">Proyectos</h3>
+            <h3 className="text-3xl font-bold mb-4">Proyectos termomecánicos</h3>
             <p className="text-blue-100 text-lg max-w-4xl">
-              Desarrollo y ejecución de proyectos termomecánicos de gran escala.
+              Desarrollo y ejecución de proyectos de climatización de gran escala.
               Obras en todo el país para industrias, parques logísticos,
               edificios corporativos y complejos productivos.
             </p>
@@ -113,7 +134,7 @@ export default function Page() {
       </section>
 
       {/* ================= CONTACTO ================= */}
-      <section id="cotizacion" className="bg-slate-100 dark:bg-slate-950 py-24">
+      <section id="cotizacion" aria-label="Solicitar cotización" className="bg-slate-100 dark:bg-slate-950 py-24">
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-start">
 
           {/* IZQUIERDA */}
@@ -138,7 +159,7 @@ export default function Page() {
             <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-lg overflow-hidden border">
               <Image
                 src="/galeria/foto1.webp"
-                alt="Proyecto corporativo"
+                alt="Proyecto de climatización corporativa ejecutado por Serviclima"
                 width={1200}
                 height={600}
                 className="w-full h-[260px] object-cover"
@@ -155,9 +176,9 @@ export default function Page() {
             </div>
 
             <div className="bg-blue-900 text-white rounded-2xl p-8 shadow-xl">
-              <h3 className="text-2xl font-bold mb-4">Expertos en climatización</h3>
+              <h3 className="text-2xl font-bold mb-4">Especialistas en aire acondicionado</h3>
               <p className="text-blue-100 mb-6">
-                Acompañamos empresas, industrias y condominios en sistemas críticos.
+                Acompañamos empresas, industrias y condominios en sistemas de climatización críticos.
               </p>
               <ul className="space-y-2 text-blue-100">
                 <li>• Empresas y parques industriales</li>
@@ -176,7 +197,7 @@ export default function Page() {
             <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-lg overflow-hidden border">
               <Image
                 src="/iconos/equipos1.png"
-                alt="Proyecto destacado"
+                alt="Equipo de aire acondicionado instalado por Serviclima"
                 width={800}
                 height={600}
                 className="w-full h-[300px] object-cover"
@@ -188,7 +209,7 @@ export default function Page() {
       </section>
 
       {/* ================= COMPROMISO AMBIENTAL ================= */}
-      <section className="bg-green-50 dark:bg-slate-900 py-24">
+      <section aria-label="Compromiso ambiental" className="bg-green-50 dark:bg-slate-900 py-24">
         <div className="max-w-7xl mx-auto px-6">
 
           <h2 className="text-4xl font-bold mb-6">Compromiso ambiental</h2>
@@ -200,12 +221,26 @@ export default function Page() {
           </p>
 
           <div className="grid md:grid-cols-2 gap-12">
-            <Image src="/iconos/eco21.png" alt="Eficiencia energética" width={800} height={600} className="rounded-2xl shadow-lg object-cover" />
-            <Image src="/iconos/eco2.png" alt="Tecnología sustentable" width={800} height={600} className="rounded-2xl shadow-lg object-cover" />
+            <Image
+              src="/iconos/eco21.png"
+              alt="Sistemas de climatización eficientes y de bajo consumo energético"
+              width={800}
+              height={600}
+              className="rounded-2xl shadow-lg object-cover"
+            />
+            <Image
+              src="/iconos/eco2.png"
+              alt="Tecnología de climatización sustentable"
+              width={800}
+              height={600}
+              className="rounded-2xl shadow-lg object-cover"
+            />
           </div>
 
         </div>
       </section>
+
+      <StickyActions tel={TEL} whats={WHATS} />
 
     </main>
   );

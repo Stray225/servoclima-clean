@@ -27,7 +27,7 @@ const STEPS = [
 
 export default function ProcessSectionPremium() {
   return (
-    <section className="bg-white dark:bg-slate-950 py-24">
+    <section id="proceso" className="bg-white dark:bg-slate-950 py-24">
       <div className="max-w-7xl mx-auto px-6">
 
         {/* Header */}

@@ -4,11 +4,11 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 
 const SLIDES = [
-  "/fotoslide1.webp",
-  "/fotoslide2.webp",
-  "/equipos2.png",
-  "/equipos3.png",
-  "/equipos4.png",
+  { src: "/fotoslide1.webp", alt: "Instalación de sistema VRF en planta industrial" },
+  { src: "/fotoslide2.webp", alt: "Equipo de climatización en edificio corporativo" },
+  { src: "/equipos2.png",    alt: "Sistema de aire acondicionado central instalado por Serviclima" },
+  { src: "/equipos3.png",    alt: "Climatización de precisión para entornos industriales" },
+  { src: "/equipos4.png",    alt: "Mantenimiento de equipos de climatización comercial" },
 ];
 
 export default function HeroSlider() {
@@ -24,14 +24,14 @@ export default function HeroSlider() {
   return (
     <div className="relative w-full h-[520px] rounded-2xl overflow-hidden shadow-lg">
 
-      {/* Imagen */}
       <Image
-        key={SLIDES[index]}
-        src={SLIDES[index]}
-        alt="Soluciones de climatización industrial"
+        key={SLIDES[index].src}
+        src={SLIDES[index].src}
+        alt={SLIDES[index].alt}
         fill
-        priority
+        priority={index === 0}
         className="object-cover"
+        sizes="(max-width: 1024px) 100vw, 50vw"
       />
 
       {/* Overlay */}
@@ -53,7 +53,9 @@ export default function HeroSlider() {
           <button
             key={i}
             onClick={() => setIndex(i)}
-            className={`w-3 h-3 rounded-full ${
+            aria-label={`Ver imagen ${i + 1} de ${SLIDES.length}`}
+            aria-current={i === index ? "true" : undefined}
+            className={`w-3 h-3 rounded-full transition-colors ${
               i === index ? "bg-white" : "bg-white/40"
             }`}
           />
