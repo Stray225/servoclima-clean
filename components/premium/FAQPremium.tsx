@@ -17,7 +17,7 @@ const ITEMS = [
   },
   {
     q: "¿Son agentes oficiales de alguna marca?",
-    a: "Somos agentes oficiales de Surrey, lo que nos da acceso directo a repuestos originales, soporte técnico de fábrica y garantías formales. Trabajamos con las principales marcas del mercado: Daikin, Carrier, Trane, Midea, entre otras, con acceso a soporte técnico directo.",
+    a: "Somos agentes oficiales de Surrey, lo que nos da acceso directo a repuestos originales, soporte técnico de fábrica y garantías formales. Trabajamos con las principales marcas del mercado: Daikin, Carrier, Trane, Midea, entre otras.",
   },
   {
     q: "¿Qué zonas de cobertura tienen?",
@@ -33,58 +33,48 @@ export default function FAQPremium() {
   const [open, setOpen] = useState<number | null>(null);
 
   return (
-    <section id="faq" className="bg-white dark:bg-slate-950 py-24">
+    <section id="faq" aria-label="Preguntas frecuentes" className="bg-white py-20">
       <div className="max-w-7xl mx-auto px-6">
 
-        <div className="grid lg:grid-cols-3 gap-16">
+        <div className="grid lg:grid-cols-3 gap-12">
 
-          {/* Izquierda — título fijo */}
+          {/* Izquierda */}
           <div className="lg:sticky lg:top-24 self-start">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-8 h-px bg-amber-400" />
-              <span className="text-amber-600 dark:text-amber-400 text-xs uppercase tracking-[0.2em] font-semibold">
-                FAQ
-              </span>
-            </div>
-            <h2 className="text-4xl font-bold text-slate-900 dark:text-white leading-tight mb-4">
-              Lo que preguntan antes de contratar
+            <h2 className="text-3xl font-bold text-slate-900 mb-3">
+              Preguntas frecuentes
             </h2>
-            <p className="text-slate-500 dark:text-slate-400 text-base leading-relaxed">
+            <p className="text-slate-500 text-sm leading-relaxed mb-6">
               Preguntas reales de gerentes, responsables de compras
               y directores técnicos.
             </p>
-            <div className="mt-8">
-              <a
-                href="#cotizacion"
-                className="inline-flex items-center gap-2 bg-amber-400 hover:bg-amber-300 text-slate-950 px-5 py-2.5 rounded-xl font-bold text-sm transition"
-              >
-                ¿Otra pregunta? Hablemos
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </a>
-            </div>
+            <a
+              href="#cotizacion"
+              className="inline-flex items-center gap-2 bg-blue-700 hover:bg-blue-800 text-white px-5 py-2.5 rounded-lg font-semibold text-sm transition"
+            >
+              Consultar ahora
+            </a>
           </div>
 
-          {/* Derecha — acordeón */}
-          <div className="lg:col-span-2 divide-y divide-slate-200 dark:divide-slate-800">
+          {/* Acordeón */}
+          <div className="lg:col-span-2 divide-y divide-slate-200">
             {ITEMS.map((item, i) => (
-              <div key={i} className="py-5">
+              <div key={i} className="py-4">
                 <button
                   onClick={() => setOpen(open === i ? null : i)}
                   className="w-full flex items-start justify-between gap-4 text-left group"
+                  aria-expanded={open === i}
                 >
-                  <h3 className="font-semibold text-slate-900 dark:text-slate-100 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition text-base leading-snug">
+                  <h3 className="font-semibold text-slate-900 group-hover:text-blue-700 transition text-sm leading-snug">
                     {item.q}
                   </h3>
-                  <span className={`flex-shrink-0 w-7 h-7 rounded-full border flex items-center justify-center transition-all duration-200 mt-0.5 ${open === i ? "rotate-45 border-amber-400 text-amber-400 bg-amber-400/10" : "border-slate-300 dark:border-slate-600 text-slate-500"}`}>
-                    <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 4v16m8-8H4" />
+                  <span className={`flex-shrink-0 w-6 h-6 rounded-full border border-slate-300 flex items-center justify-center transition-transform mt-0.5 ${open === i ? "rotate-45 border-blue-500" : ""}`}>
+                    <svg className="w-3 h-3 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
                     </svg>
                   </span>
                 </button>
                 {open === i && (
-                  <p className="mt-3 text-slate-600 dark:text-slate-400 text-sm leading-relaxed pr-10">
+                  <p className="mt-3 text-slate-600 text-sm leading-relaxed pr-8">
                     {item.a}
                   </p>
                 )}

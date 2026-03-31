@@ -11,7 +11,7 @@ const TABS = [
 
 const CONTENT = {
   instalaciones: {
-    title: "Instalaciones",
+    title: "Instalaciones de aire acondicionado",
     subtitle: "Sistemas de climatización de alto rendimiento para cualquier escala",
     desc: "Sistemas VRF/VRV, chillers, rooftops y distribución zonal para oficinas, plantas industriales, centros logísticos y edificios corporativos. Instalaciones con documentación técnica completa desde el inicio.",
     items: [
@@ -24,7 +24,7 @@ const CONTENT = {
     ],
   },
   proyectos: {
-    title: "Proyectos",
+    title: "Proyectos termomecánicos",
     subtitle: "Gestión integral de obras termomecánicas de gran escala",
     desc: "Desde el anteproyecto hasta la puesta en marcha y entrega. Un solo interlocutor para todo el ciclo de la obra, con documentación técnica certificada y soporte post-entrega.",
     items: [
@@ -37,7 +37,7 @@ const CONTENT = {
     ],
   },
   mantenimiento: {
-    title: "Mantenimiento",
+    title: "Mantenimiento de aire acondicionado",
     subtitle: "Contratos de mantenimiento con SLA definido para operación continua",
     desc: "Programas preventivos y correctivos que eliminan el riesgo de paradas imprevistas. SLA acordado, técnicos propios, informes por visita y gestión multi-sede para empresas con múltiples instalaciones.",
     items: [
@@ -50,7 +50,7 @@ const CONTENT = {
     ],
   },
   ingenieria: {
-    title: "Ingeniería",
+    title: "Ingeniería en climatización",
     subtitle: "Documentación técnica profesional para licitaciones, auditorías y compliance",
     desc: "Cálculo térmico, memorias descriptivas y especificaciones técnicas que respaldan cada instalación. Soporte completo para licitaciones públicas y privadas, habilitaciones municipales y auditorías internas.",
     items: [
@@ -69,32 +69,30 @@ export default function ServicesPremium() {
   const data = CONTENT[active];
 
   return (
-    <section id="servicios" className="bg-slate-50 dark:bg-slate-950 py-24">
+    <section id="servicios" aria-label="Servicios de climatización" className="bg-white py-20">
       <div className="max-w-7xl mx-auto px-6">
 
         {/* Header */}
-        <div className="max-w-2xl mb-12">
-          <p className="text-blue-600 dark:text-blue-400 text-sm uppercase tracking-widest font-medium mb-3">
-            Nuestros servicios
-          </p>
-          <h2 className="text-4xl font-bold mb-4 leading-tight">
-            Soluciones técnicas para entornos que exigen más
+        <div className="max-w-2xl mb-10">
+          <h2 className="text-3xl font-bold text-slate-900 mb-3">
+            Servicios de climatización
           </h2>
-          <p className="text-slate-600 dark:text-slate-400 text-lg">
-            Trabajamos con empresas que no pueden permitirse paradas.
+          <p className="text-slate-600 text-base">
+            Instalación, mantenimiento e ingeniería para empresas que necesitan
+            climatización confiable.
           </p>
         </div>
 
         {/* TABS */}
-        <div className="flex flex-wrap gap-2 mb-8">
+        <div className="flex flex-wrap gap-2 mb-6 border-b border-slate-200 pb-4">
           {TABS.map((tab) => (
             <button
               key={tab.id}
               onClick={() => setActive(tab.id as keyof typeof CONTENT)}
-              className={`px-5 py-2.5 rounded-xl font-semibold text-sm transition-all ${
+              className={`px-4 py-2 rounded-lg font-medium text-sm transition ${
                 active === tab.id
-                  ? "bg-blue-600 text-white shadow-lg shadow-blue-500/20"
-                  : "bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700 hover:border-blue-300 dark:hover:border-blue-700"
+                  ? "bg-blue-700 text-white"
+                  : "bg-slate-100 text-slate-600 hover:bg-slate-200"
               }`}
             >
               {tab.label}
@@ -105,43 +103,35 @@ export default function ServicesPremium() {
         {/* CONTENIDO del tab */}
         <div
           key={active}
-          className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-700 overflow-hidden shadow-sm"
+          className="bg-white rounded-xl border border-slate-200 overflow-hidden"
         >
           {/* Header del tab */}
-          <div className="bg-gradient-to-r from-blue-900 to-slate-900 text-white p-10">
-            <h3 className="text-3xl font-bold mb-2">{data.title}</h3>
-            <p className="text-blue-200 text-lg mb-4">{data.subtitle}</p>
-            <p className="text-slate-300 max-w-3xl leading-relaxed">{data.desc}</p>
+          <div className="bg-blue-900 text-white p-8">
+            <h3 className="text-2xl font-bold mb-2">{data.title}</h3>
+            <p className="text-blue-200 mb-3">{data.subtitle}</p>
+            <p className="text-blue-100 text-sm max-w-3xl leading-relaxed">{data.desc}</p>
           </div>
 
           {/* Grid de items */}
-          <div
-            id={active === "proyectos" ? "proyectos" : active === "mantenimiento" ? "mantenimiento" : undefined}
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-0 divide-y divide-x divide-slate-100 dark:divide-slate-800"
-          >
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-slate-100">
             {data.items.map((item, i) => (
-              <div key={i} className="p-7 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
-                <div className="flex items-start gap-3">
-                  <span className="w-2 h-2 rounded-full bg-blue-500 mt-2 flex-shrink-0" />
-                  <div>
-                    <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-1">{item.title}</h4>
-                    <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">{item.desc}</p>
-                  </div>
-                </div>
+              <div key={i} className="p-6 border-b border-slate-100 last:border-b-0">
+                <h4 className="font-semibold text-slate-900 mb-1 text-sm">{item.title}</h4>
+                <p className="text-slate-500 text-sm leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
 
           {/* CTA del tab */}
-          <div className="px-10 py-6 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
-            <p className="text-slate-500 dark:text-slate-400 text-sm">
+          <div className="px-8 py-5 border-t border-slate-200 flex items-center justify-between bg-slate-50">
+            <p className="text-slate-500 text-sm">
               ¿Tiene un proyecto en mente?
             </p>
             <a
               href="#cotizacion"
-              className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-lg font-semibold text-sm transition"
+              className="bg-blue-700 hover:bg-blue-800 text-white px-5 py-2 rounded-lg font-semibold text-sm transition"
             >
-              Solicitar cotización →
+              Solicitar cotización
             </a>
           </div>
         </div>

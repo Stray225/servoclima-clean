@@ -23,13 +23,13 @@ const STATS = [
 
 export default function StatsBannerPremium() {
   return (
-    <section className="bg-slate-900 border-y border-slate-800">
-      <div className="max-w-7xl mx-auto px-6 py-0 divide-y divide-slate-800 md:divide-y-0 md:divide-x md:flex">
+    <section className="bg-slate-50 border-y border-slate-200">
+      <div className="max-w-7xl mx-auto px-6 py-0 divide-y divide-slate-200 md:divide-y-0 md:divide-x md:flex">
         {STATS.map((s) => (
-          <div key={s.label} className="flex-1 px-8 py-10 text-center md:text-left">
-            <div className="text-5xl font-bold text-amber-400 mb-1">{s.value}</div>
-            <div className="text-white font-semibold mb-1">{s.label}</div>
-            <div className="text-slate-500 text-sm">{s.context}</div>
+          <div key={s.label} className="flex-1 px-6 py-8 text-center md:text-left">
+            <div className="text-4xl font-bold text-blue-700 mb-1">{s.value}</div>
+            <div className="text-slate-900 font-semibold text-sm mb-1">{s.label}</div>
+            <div className="text-slate-500 text-xs">{s.context}</div>
           </div>
         ))}
       </div>
