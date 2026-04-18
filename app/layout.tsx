@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
+import ScrollProgress from "@/components/ScrollProgress";
 import Script from "next/script";
 
 const SITE_URL = "https://serviclim.ar";
@@ -186,6 +187,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </Script>
       </head>
       <body className="bg-slate-50 text-slate-900">
+        <ScrollProgress />
         <ScrollReveal />
         <Navbar />
         {children}

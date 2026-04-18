@@ -1,50 +1,42 @@
-// app/page.tsx
 import type { Metadata } from "next";
 import Image from "next/image";
-import HeroSlider from "@/components/HeroSlider";
-import TrustBar from "@/components/TrustBar";
 import ContactForm from "@/components/ContactForm";
 import StickyActions from "@/components/StickyActions";
+import LogoMarquee from "@/components/LogoMarquee";
+import Counter from "@/components/Counter";
 
 const WHATS = "5491121732871";
 const TEL = "+541121732871";
 
 export const metadata: Metadata = {
   title: "Instalación y service de aire acondicionado · CABA y GBA",
-  description:
-    "Instalación de sistemas de climatización para industrias, fábricas y edificios corporativos en CABA y GBA. VRF/VRV, chillers, splits y proyectos termomecánicos. Agente oficial Surrey.",
-  alternates: {
-    canonical: "https://serviclim.ar",
-  },
+  description: "Instalación de sistemas de climatización para industrias, fábricas y edificios corporativos en CABA y GBA. VRF/VRV, chillers, splits y proyectos termomecánicos. Agente oficial Surrey.",
+  alternates: { canonical: "https://serviclim.ar" },
   openGraph: {
-    title: "Serviclima | Instalación y service de aire acondicionado · CABA y GBA",
-    description:
-      "Instalación, service y mantenimiento de climatización industrial y corporativa en CABA y GBA. VRF/VRV, chillers y proyectos termomecánicos.",
+    title: "Serviclima | Climatización industrial y corporativa · CABA y GBA",
+    description: "Ingeniería térmica para operaciones críticas. +20 años, +500 instalaciones.",
     url: "https://serviclim.ar",
   },
 };
 
 export default function Page() {
   return (
-    <main className="bg-slate-100 text-slate-900 dark:bg-slate-950 dark:text-slate-50">
+    <main className="bg-slate-50 text-slate-900">
 
-      {/* ================= HERO ================= */}
-      <section aria-label="Presentación" className="relative bg-blue-950 overflow-hidden">
+      {/* ╔══════════ 1 · HERO EDITORIAL ══════════ ╗ */}
+      <section className="relative mesh-dark grain overflow-hidden min-h-[92vh] flex items-center">
+        <div className="absolute inset-0 dots-pattern opacity-40" />
+        <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent" />
 
-        {/* Dot texture */}
-        <div className="absolute inset-0 pointer-events-none" style={{backgroundImage: 'radial-gradient(circle, rgba(99,149,255,0.10) 1px, transparent 1px)', backgroundSize: '30px 30px'}} />
-        {/* Top accent line */}
-        <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-blue-500 to-transparent" />
+        <div className="max-w-7xl mx-auto px-6 pt-28 pb-20 relative w-full">
 
-        <div className="max-w-7xl mx-auto px-6 pt-10 pb-16">
-
-          {/* ── Brand identity bar ── */}
-          <div className="flex items-center gap-5 mb-12 pb-8 border-b border-blue-900/70">
-            <div className="bg-white rounded-xl px-4 py-2 shadow-lg flex-shrink-0">
-              <Image src="/serviclimas-logo-trimmed.png" width={160} height={48} className="h-10 w-auto" alt="Serviclimas" />
+          {/* Top bar */}
+          <div className="flex items-center gap-5 mb-16 pb-6 border-b border-white/5">
+            <div className="bg-white rounded-xl px-4 py-2 shadow-2xl flex-shrink-0">
+              <Image src="/serviclimas-logo-trimmed.png" width={160} height={48} className="h-9 w-auto" alt="Serviclimas" />
             </div>
-            <div className="flex-1 h-px bg-gradient-to-r from-blue-800/80 to-transparent" />
-            <div className="hidden md:flex items-center gap-3 text-blue-500/70 text-xs font-semibold tracking-widest uppercase flex-shrink-0">
+            <div className="flex-1 h-px bg-gradient-to-r from-blue-800/60 to-transparent" />
+            <div className="hidden lg:flex items-center gap-3 text-blue-400/60 text-[11px] font-semibold tracking-[0.25em] uppercase">
               <span>Climatización Industrial</span>
               <span className="w-1 h-1 rounded-full bg-blue-700" />
               <span>CABA · GBA</span>
@@ -53,292 +45,430 @@ export default function Page() {
             </div>
           </div>
 
-          {/* ── Main grid ── */}
-          <div className="grid lg:grid-cols-5 gap-12 items-center">
+          <div className="grid lg:grid-cols-12 gap-10 items-end">
 
-            {/* Texto: 3/5 */}
-            <div className="lg:col-span-3">
-              <div className="inline-flex items-center gap-2 text-blue-300 text-xs font-semibold mb-6 border border-blue-800 rounded-full px-4 py-1.5 bg-blue-900/40">
+            {/* Left: huge type */}
+            <div className="lg:col-span-8">
+              <div className="inline-flex items-center gap-2 text-blue-300/90 text-[11px] font-bold tracking-[0.3em] uppercase mb-8 border border-blue-800/60 rounded-full px-4 py-1.5 bg-blue-950/40 backdrop-blur-sm">
                 <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse" />
-                Industria · Corporativo · Gran Escala
+                Industria · Corporativo · Gran escala
               </div>
 
-              <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight mb-6">
-                Instalamos donde<br />
-                <span className="text-blue-400">la operación</span><br />
-                no puede detenerse
+              <h1 className="text-white font-bold leading-[0.95] tracking-tight mb-8" style={{fontSize: "clamp(2.8rem, 7vw, 6rem)"}}>
+                Ingeniería térmica<br />
+                <span className="text-grad">para operaciones</span><br />
+                que no pueden detenerse.
               </h1>
 
-              <p className="text-blue-100/70 max-w-lg leading-relaxed mb-8">
-                Ingeniería, instalación y mantenimiento de sistemas de climatización
-                para fábricas, plantas industriales, edificios corporativos y grandes proyectos
-                en CABA y GBA. Más de 20 años, más de 500 instalaciones.
+              <p className="text-blue-100/60 max-w-xl text-lg leading-relaxed mb-10">
+                Instalación, service y mantenimiento de sistemas de climatización
+                para fábricas, plantas industriales, edificios corporativos y
+                grandes proyectos en CABA y GBA.
               </p>
 
-              <div className="flex flex-wrap gap-4 mb-10">
-                <a href="#cotizacion" className="group bg-white text-blue-900 px-7 py-3.5 rounded-lg font-bold hover:bg-blue-50 transition flex items-center gap-2 shadow-xl text-sm">
+              <div className="flex flex-wrap gap-4">
+                <a href="#cotizacion" className="group bg-white text-slate-900 px-8 py-4 rounded-lg font-bold hover:bg-blue-50 transition flex items-center gap-2 shadow-2xl text-sm tracking-wide">
                   Solicitar cotización
-                  <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                  <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path d="M17 8l4 4m0 0l-4 4m4-4H3" strokeLinecap="round" strokeLinejoin="round" /></svg>
                 </a>
-                <a href="tel:+541121732871" className="border border-blue-700/80 text-blue-200 hover:text-white hover:border-blue-400 px-7 py-3.5 rounded-lg font-semibold transition text-sm flex items-center gap-2">
-                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+                <a href={`tel:${TEL}`} className="border border-blue-800/70 text-blue-100 hover:text-white hover:border-blue-400 hover:bg-blue-900/30 px-8 py-4 rounded-lg font-semibold transition text-sm flex items-center gap-2 backdrop-blur-sm">
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" strokeLinecap="round" strokeLinejoin="round" /></svg>
                   (011) 2173-2871
                 </a>
               </div>
-
-              {/* Trust signals */}
-              <div className="flex flex-wrap gap-5 text-xs text-blue-400/80">
-                {["Documentación técnica completa", "Contratos con SLA definido", "Factura A garantizada"].map(t => (
-                  <span key={t} className="flex items-center gap-1.5">
-                    <svg className="w-3.5 h-3.5 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" /></svg>
-                    {t}
-                  </span>
-                ))}
-              </div>
             </div>
 
-            {/* Slider: 2/5 */}
-            <div className="lg:col-span-2">
-              <div className="rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/10 ring-offset-1 ring-offset-blue-950">
-                <HeroSlider />
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        <div className="absolute bottom-0 inset-x-0 h-12 bg-gradient-to-t from-slate-900/30 to-transparent pointer-events-none" />
-      </section>
-
-      {/* ================= STATS ================= */}
-      <div className="bg-slate-900 text-white">
-        <div className="max-w-7xl mx-auto px-6 py-8 grid grid-cols-2 md:grid-cols-4 divide-x divide-slate-700/50">
-          {[
-            { num: "+20", label: "años de experiencia" },
-            { num: "+500", label: "instalaciones realizadas" },
-            { num: "CABA", label: "y todo el GBA" },
-            { num: "Surrey", label: "agente oficial" },
-          ].map((s) => (
-            <div key={s.num} className="text-center px-4 py-2 reveal">
-              <div className="text-2xl font-bold text-blue-400">{s.num}</div>
-              <div className="text-slate-400 text-xs mt-1">{s.label}</div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* ================= CLIENTES ================= */}
-      <section aria-label="Clientes" className="bg-white dark:bg-slate-900 py-16">
-        <TrustBar />
-      </section>
-
-      {/* ================= SERVICIOS ================= */}
-      <section id="servicios" aria-label="Servicios de climatización" className="bg-slate-50 dark:bg-slate-900 py-20">
-        <div className="max-w-7xl mx-auto px-6">
-
-          <div className="reveal mb-14">
-            <p className="text-blue-600 font-semibold text-sm uppercase tracking-widest mb-3">Qué hacemos</p>
-            <h2 className="text-4xl font-bold mb-4">Servicios de climatización</h2>
-            <div className="w-12 h-1 bg-blue-600 rounded mb-5" />
-            <p className="text-slate-600 dark:text-slate-300 max-w-2xl">
-              Instalación, service y mantenimiento de sistemas de climatización para
-              fábricas, plantas industriales, edificios corporativos, parques logísticos
-              y centros comerciales en CABA y GBA.
-            </p>
-          </div>
-
-          <div className="grid lg:grid-cols-3 gap-8 mb-8">
-
-            <div className="reveal reveal-d1 group bg-white dark:bg-slate-950 rounded-2xl p-9 shadow-md ring-1 ring-slate-200 border-t-4 border-blue-600 hover:-translate-y-1 hover:shadow-xl transition-all duration-300 cursor-default">
-              <div className="w-11 h-11 rounded-xl bg-blue-50 flex items-center justify-center mb-6">
-                <svg className="w-5 h-5 text-blue-700" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
-              </div>
-              <h3 className="text-xl font-bold mb-3">Instalación de aire acondicionado</h3>
-              <p className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
-                Splits, multisplits, VRF/VRV, chillers y rooftops. Instalación con documentación técnica y garantía escrita en CABA y GBA.
-              </p>
-            </div>
-
-            <div className="reveal reveal-d2 group bg-white dark:bg-slate-950 rounded-2xl p-9 shadow-md ring-1 ring-slate-200 border-t-4 border-blue-600 hover:-translate-y-1 hover:shadow-xl transition-all duration-300 cursor-default">
-              <div className="w-11 h-11 rounded-xl bg-blue-50 flex items-center justify-center mb-6">
-                <svg className="w-5 h-5 text-blue-700" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-              </div>
-              <h3 className="text-xl font-bold mb-3">Service y mantenimiento</h3>
-              <p className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
-                Service correctivo y preventivo con contrato. Mantenimiento programado para empresas, condominios y plantas industriales.
-              </p>
-            </div>
-
-            <div className="reveal reveal-d3 group bg-white dark:bg-slate-950 rounded-2xl p-9 shadow-md ring-1 ring-slate-200 border-t-4 border-blue-600 hover:-translate-y-1 hover:shadow-xl transition-all duration-300 cursor-default">
-              <div className="w-11 h-11 rounded-xl bg-blue-50 flex items-center justify-center mb-6">
-                <svg className="w-5 h-5 text-blue-700" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" /></svg>
-              </div>
-              <h3 className="text-xl font-bold mb-3">Ingeniería en climatización</h3>
-              <p className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
-                Cálculo térmico, documentación técnica, especificaciones y soporte para auditorías y licitaciones.
-              </p>
-            </div>
-
-          </div>
-
-          <div className="reveal bg-gradient-to-r from-blue-900 to-blue-800 text-white rounded-2xl p-12 shadow-xl">
-            <div className="flex flex-col lg:flex-row lg:items-center gap-6 justify-between">
-              <div>
-                <h3 className="text-2xl font-bold mb-3">Proyectos termomecánicos</h3>
-                <p className="text-blue-100/90 max-w-2xl leading-relaxed">
-                  Desarrollo y ejecución de proyectos de climatización de gran escala. Obras en todo el país para industrias, parques logísticos, edificios corporativos y complejos productivos.
-                </p>
-              </div>
-              <a href="#cotizacion" className="flex-shrink-0 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold px-6 py-3 rounded-lg transition text-sm whitespace-nowrap">
-                Consultar proyecto →
-              </a>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      {/* ================= CONTACTO ================= */}
-      <section id="cotizacion" aria-label="Solicitar cotización" className="bg-slate-100 dark:bg-slate-950 py-24">
-        <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-start">
-
-          {/* IZQUIERDA */}
-          <div className="space-y-8">
-
-            <div className="reveal">
-              <Image src="/serviclimas-logo-trimmed.png" width={200} height={58} className="h-12 w-auto mix-blend-multiply mb-5" alt="Serviclimas" />
-              <p className="text-blue-700 font-semibold text-sm uppercase tracking-widest mb-3">Nuestra empresa</p>
-              <h2 className="text-4xl font-bold mb-3 leading-tight">
-                Ingeniería en climatización pensada para operar
-              </h2>
-              <div className="w-12 h-1 bg-blue-600 rounded mb-5" />
-              <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
-                Serviclima Heating &amp; Cooling S.R.L. brinda soluciones profesionales
-                de climatización para empresas, condominios y plantas industriales,
-                con foco en eficiencia, confiabilidad y continuidad operativa.
-              </p>
-            </div>
-
-            <div className="reveal bg-white dark:bg-slate-900 rounded-2xl shadow-md overflow-hidden ring-1 ring-slate-200">
-              <Image
-                src="/galeria/foto1.webp"
-                alt="Proyecto de climatización corporativa ejecutado por Serviclima"
-                width={1200}
-                height={600}
-                className="w-full h-[240px] object-cover"
-              />
-              <div className="p-7">
-                <ul className="space-y-3 text-slate-700 dark:text-slate-300 text-sm">
-                  {[
-                    "Ingeniería y cálculo térmico profesional",
-                    "Mantenimientos correctivos y preventivos con contrato",
-                    "Proyectos termomecánicos y obras en todo el país",
-                    "Beneficios por ser agente oficial Surrey",
-                  ].map((item) => (
-                    <li key={item} className="flex items-start gap-3">
-                      <svg className="w-4 h-4 text-blue-600 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" /></svg>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-
-            <div className="reveal bg-gradient-to-br from-blue-900 to-blue-800 text-white rounded-2xl p-8 shadow-xl">
-              <h3 className="text-xl font-bold mb-3">Especialistas en aire acondicionado</h3>
-              <p className="text-blue-100/80 text-sm mb-5 leading-relaxed">
-                Acompañamos empresas, industrias y condominios en sistemas de climatización críticos.
-              </p>
-              <ul className="grid grid-cols-2 gap-2 text-sm text-blue-100">
-                {["Empresas y parques industriales", "Edificios corporativos", "Centros logísticos", "Residencial premium"].map(i => (
-                  <li key={i} className="flex items-center gap-2">
-                    <span className="w-1 h-1 rounded-full bg-blue-400 flex-shrink-0" />
-                    {i}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-          </div>
-
-          {/* DERECHA */}
-          <div className="space-y-10 sticky top-24">
-            <ContactForm />
-
-            <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-lg overflow-hidden border">
-              <Image
-                src="/iconos/equipos1.png"
-                alt="Equipo de aire acondicionado instalado por Serviclima"
-                width={800}
-                height={600}
-                className="w-full h-[300px] object-cover"
-              />
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      {/* ================= COMPROMISO AMBIENTAL ================= */}
-      <section aria-label="Compromiso ambiental" className="bg-white dark:bg-slate-900 py-20">
-        <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
-
-          {/* Texto */}
-          <div className="reveal">
-            <p className="text-green-600 font-semibold text-sm uppercase tracking-widest mb-3">Sustentabilidad</p>
-            <h2 className="text-4xl font-bold mb-3">Compromiso ambiental</h2>
-            <div className="w-12 h-1 bg-green-500 rounded mb-6" />
-            <p className="text-slate-600 dark:text-slate-300 leading-relaxed mb-8">
-              Diseñamos sistemas de climatización eficientes que reducen el consumo
-              energético, optimizan recursos y disminuyen el impacto ambiental,
-              acompañando políticas modernas de sustentabilidad corporativa.
-            </p>
-            <div className="space-y-4">
+            {/* Right: inline stats vertical */}
+            <div className="lg:col-span-4 space-y-6 border-l border-blue-900/40 pl-8">
               {[
-                { icon: "M13 10V3L4 14h7v7l9-11h-7z", label: "Menor consumo energético", desc: "Equipos de alta eficiencia con certificación energética" },
-                { icon: "M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064", label: "Refrigerantes sustentables", desc: "Gases con bajo potencial de calentamiento global" },
-                { icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z", label: "Documentación técnica completa", desc: "Informes de eficiencia y auditorías energéticas" },
-              ].map((b) => (
-                <div key={b.label} className="flex items-start gap-4 p-4 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700">
-                  <div className="w-9 h-9 rounded-lg bg-green-100 flex items-center justify-center flex-shrink-0">
-                    <svg className="w-4 h-4 text-green-700" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={b.icon} /></svg>
-                  </div>
-                  <div>
-                    <p className="font-semibold text-sm text-slate-900 dark:text-white">{b.label}</p>
-                    <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">{b.desc}</p>
-                  </div>
+                { k: "20+", v: "años de experiencia industrial" },
+                { k: "500+", v: "instalaciones ejecutadas" },
+                { k: "Surrey", v: "agente oficial · repuestos originales" },
+              ].map(s => (
+                <div key={s.k}>
+                  <div className="text-white text-3xl font-bold mb-1">{s.k}</div>
+                  <div className="text-blue-300/50 text-xs uppercase tracking-widest">{s.v}</div>
                 </div>
               ))}
             </div>
+
           </div>
 
-          {/* Imágenes */}
-          <div className="reveal reveal-d1 grid grid-cols-2 gap-4">
-            <Image
-              src="/iconos/eco21.png"
-              alt="Sistemas de climatización eficientes y de bajo consumo energético"
-              width={600}
-              height={700}
-              className="rounded-2xl shadow-md object-cover w-full h-full col-span-1 row-span-2"
-            />
-            <Image
-              src="/iconos/eco2.png"
-              alt="Tecnología de climatización sustentable"
-              width={600}
-              height={400}
-              className="rounded-2xl shadow-md object-cover w-full"
-            />
-            <div className="rounded-2xl bg-green-600 p-5 flex flex-col justify-center">
-              <p className="text-white font-bold text-2xl">A++</p>
-              <p className="text-green-100 text-xs mt-1">Eficiencia energética en todos los proyectos</p>
+          {/* Scroll hint */}
+          <div className="absolute bottom-6 right-6 hidden md:flex items-center gap-2 text-blue-400/40 text-[10px] tracking-[0.3em] uppercase">
+            <span>Scroll</span>
+            <span className="w-6 h-px bg-blue-600/40 animate-pulse" />
+          </div>
+        </div>
+      </section>
+
+      {/* ╔══════════ 2 · LOGO MARQUEE ══════════ ╗ */}
+      <section className="bg-slate-950 py-14 border-t border-slate-900">
+        <div className="max-w-7xl mx-auto px-6 mb-8 reveal">
+          <div className="flex items-center gap-4 text-slate-500 text-xs tracking-[0.3em] uppercase">
+            <span className="w-8 h-px bg-slate-700" />
+            Confían en nosotros
+            <span className="w-8 h-px bg-slate-700" />
+          </div>
+        </div>
+        <LogoMarquee />
+      </section>
+
+      {/* ╔══════════ 3 · INTRO EDITORIAL ══════════ ╗ */}
+      <section className="bg-white py-28 relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-80 h-80 bg-blue-50 rounded-full blur-3xl opacity-60 -translate-x-40 -translate-y-20" />
+        <div className="max-w-7xl mx-auto px-6 relative">
+          <div className="grid lg:grid-cols-12 gap-12">
+            <div className="lg:col-span-5 reveal">
+              <p className="eyebrow mb-5">Quiénes somos</p>
+              <h2 className="text-5xl font-bold leading-[1.05] tracking-tight">
+                Una empresa <span className="text-grad">técnica</span> para decisiones de infraestructura.
+              </h2>
+            </div>
+            <div className="lg:col-span-6 lg:col-start-7 reveal reveal-d1 space-y-5 text-slate-600 text-lg leading-relaxed">
+              <p>
+                Serviclima Heating &amp; Cooling S.R.L. diseña, instala y mantiene
+                sistemas de climatización para entornos donde la continuidad
+                operativa, la eficiencia energética y la documentación técnica
+                no son opcionales.
+              </p>
+              <p>
+                Operamos con ingeniería propia, contratos con SLA escrito,
+                factura A y cobertura en todo CABA y GBA.
+              </p>
+              <div className="flex gap-8 pt-6 border-t border-slate-100 mt-8">
+                <div>
+                  <div className="text-3xl font-bold text-slate-900"><Counter end={20} suffix="+" /></div>
+                  <div className="text-xs uppercase tracking-widest text-slate-500 mt-1">años</div>
+                </div>
+                <div>
+                  <div className="text-3xl font-bold text-slate-900"><Counter end={500} suffix="+" /></div>
+                  <div className="text-xs uppercase tracking-widest text-slate-500 mt-1">instalaciones</div>
+                </div>
+                <div>
+                  <div className="text-3xl font-bold text-slate-900"><Counter end={4} /></div>
+                  <div className="text-xs uppercase tracking-widest text-slate-500 mt-1">regiones</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ╔══════════ 4 · SECTORES (BENTO) ══════════ ╗ */}
+      <section id="sectores" className="bg-slate-50 py-28 relative">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex items-end justify-between mb-14 reveal">
+            <div>
+              <p className="eyebrow mb-4">Sectores</p>
+              <h2 className="text-5xl font-bold leading-tight max-w-2xl">Climatización diseñada para <span className="text-grad">cada industria</span>.</h2>
+            </div>
+            <a href="#cotizacion" className="hidden md:inline-flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-800 transition">
+              Consultar tu sector
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path d="M17 8l4 4m0 0l-4 4m4-4H3" strokeLinecap="round" strokeLinejoin="round" /></svg>
+            </a>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-6 gap-5">
+            {/* Big: Industria */}
+            <div className="md:col-span-4 md:row-span-2 relative group h-[500px] rounded-3xl overflow-hidden zoom-wrap reveal">
+              <Image src="/fotoslide1.webp" fill alt="Planta industrial" className="object-cover" sizes="(max-width:768px) 100vw, 66vw" />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
+              <div className="absolute inset-x-0 bottom-0 p-8 text-white">
+                <p className="text-blue-300 text-[11px] font-bold tracking-[0.3em] uppercase mb-3">01 · Industria</p>
+                <h3 className="text-3xl font-bold mb-2">Plantas productivas y fábricas</h3>
+                <p className="text-white/70 text-sm max-w-md">Climatización de proceso, precisión térmica, salas técnicas y naves industriales.</p>
+              </div>
+            </div>
+
+            {/* Corporativo */}
+            <div className="md:col-span-2 relative group h-[240px] rounded-3xl overflow-hidden zoom-wrap reveal reveal-d1">
+              <Image src="/fotoslide2.webp" fill alt="Edificio corporativo" className="object-cover" sizes="(max-width:768px) 100vw, 33vw" />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
+              <div className="absolute inset-x-0 bottom-0 p-6 text-white">
+                <p className="text-blue-300 text-[10px] font-bold tracking-[0.3em] uppercase mb-1">02</p>
+                <h3 className="text-xl font-bold">Corporativo</h3>
+              </div>
+            </div>
+
+            {/* Logística */}
+            <div className="md:col-span-2 relative group h-[240px] rounded-3xl overflow-hidden zoom-wrap reveal reveal-d2">
+              <Image src="/equipos2.png" fill alt="Centro logístico" className="object-cover" sizes="(max-width:768px) 100vw, 33vw" />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
+              <div className="absolute inset-x-0 bottom-0 p-6 text-white">
+                <p className="text-blue-300 text-[10px] font-bold tracking-[0.3em] uppercase mb-1">03</p>
+                <h3 className="text-xl font-bold">Logística y depósitos</h3>
+              </div>
+            </div>
+
+            {/* Retail */}
+            <div className="md:col-span-2 relative group h-[240px] rounded-3xl overflow-hidden zoom-wrap reveal">
+              <Image src="/equipos3.png" fill alt="Retail" className="object-cover" sizes="(max-width:768px) 100vw, 33vw" />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
+              <div className="absolute inset-x-0 bottom-0 p-6 text-white">
+                <p className="text-blue-300 text-[10px] font-bold tracking-[0.3em] uppercase mb-1">04</p>
+                <h3 className="text-xl font-bold">Retail y comercial</h3>
+              </div>
+            </div>
+
+            {/* Hospitality */}
+            <div className="md:col-span-2 relative group h-[240px] rounded-3xl overflow-hidden zoom-wrap reveal reveal-d1">
+              <Image src="/equipos4.png" fill alt="Hospitality" className="object-cover" sizes="(max-width:768px) 100vw, 33vw" />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
+              <div className="absolute inset-x-0 bottom-0 p-6 text-white">
+                <p className="text-blue-300 text-[10px] font-bold tracking-[0.3em] uppercase mb-1">05</p>
+                <h3 className="text-xl font-bold">Hospitality</h3>
+              </div>
+            </div>
+
+            {/* Proyectos especiales */}
+            <div className="md:col-span-2 relative group h-[240px] rounded-3xl overflow-hidden bg-gradient-to-br from-blue-900 to-slate-900 reveal reveal-d2">
+              <div className="absolute inset-0 dots-pattern opacity-40" />
+              <div className="relative p-6 h-full flex flex-col justify-between text-white">
+                <p className="text-blue-300 text-[10px] font-bold tracking-[0.3em] uppercase">06</p>
+                <div>
+                  <h3 className="text-xl font-bold mb-2">Proyectos especiales</h3>
+                  <p className="text-white/60 text-xs">Obras llave en mano en todo el país</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ╔══════════ 5 · SERVICIOS EDITORIAL ALT ══════════ ╗ */}
+      <section id="servicios" className="bg-white py-28 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 mb-20 reveal">
+          <p className="eyebrow mb-4">Servicios</p>
+          <h2 className="text-5xl font-bold leading-tight max-w-3xl">Cuatro áreas de trabajo. Un estándar de calidad.</h2>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-6 space-y-32">
+          {[
+            { n: "01", t: "Instalación de aire acondicionado", d: "Splits, multisplits, VRF/VRV, chillers y rooftops. Ingeniería de montaje, documentación técnica y garantía escrita en cada obra.", img: "/fotoslide1.webp", feats: ["Cálculo térmico profesional", "Planos as-built", "Certificados de instalación", "Garantía formal por escrito"] },
+            { n: "02", t: "Service y mantenimiento", d: "Programas de mantenimiento preventivo y correctivo con frecuencias acordadas, SLA definido y reporte técnico por intervención.", img: "/fotoslide2.webp", feats: ["Contrato mensual / trimestral / semestral", "Tiempos de respuesta definidos", "Reporte técnico post-servicio", "Stock de repuestos originales"] },
+            { n: "03", t: "Ingeniería en climatización", d: "Cálculo térmico, memorias descriptivas, especificaciones técnicas y soporte completo para licitaciones y auditorías.", img: "/equipos2.png", feats: ["Memoria técnica completa", "Planos y especificaciones", "Soporte a licitaciones", "Documentación para auditorías"] },
+            { n: "04", t: "Proyectos termomecánicos", d: "Desarrollo y ejecución de obras llave en mano para plantas industriales, parques logísticos y complejos corporativos en todo el país.", img: "/equipos3.png", feats: ["Obra llave en mano", "Coordinación multi-rubro", "Cumplimiento de cronograma", "Soporte post-entrega"] },
+          ].map((s, i) => (
+            <div key={s.n} className={`grid lg:grid-cols-12 gap-12 items-center ${i % 2 ? "lg:[&>div:first-child]:order-2" : ""}`}>
+              <div className="lg:col-span-7 reveal-left">
+                <div className="relative aspect-[4/3] rounded-3xl overflow-hidden zoom-wrap shadow-2xl">
+                  <Image src={s.img} alt={s.t} fill className="object-cover" sizes="(max-width:1024px) 100vw, 58vw" />
+                  <div className="absolute top-6 left-6 bg-white/95 backdrop-blur-sm rounded-lg px-3 py-1.5 text-[11px] font-bold tracking-[0.2em] text-blue-700 uppercase">
+                    {s.n} · Servicio
+                  </div>
+                </div>
+              </div>
+              <div className="lg:col-span-5 reveal-right">
+                <div className="text-[120px] font-black leading-none text-blue-50 mb-4 select-none">{s.n}</div>
+                <h3 className="text-4xl font-bold mb-5 leading-tight">{s.t}</h3>
+                <p className="text-slate-600 text-lg leading-relaxed mb-7">{s.d}</p>
+                <ul className="space-y-3 mb-8">
+                  {s.feats.map(f => (
+                    <li key={f} className="flex items-start gap-3 text-slate-700">
+                      <span className="w-5 h-5 rounded-full bg-blue-600/10 flex items-center justify-center mt-0.5 flex-shrink-0">
+                        <svg className="w-3 h-3 text-blue-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}><path d="M5 13l4 4L19 7" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                      </span>
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+                <a href="#cotizacion" className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:gap-3 transition-all">
+                  Consultar servicio
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path d="M17 8l4 4m0 0l-4 4m4-4H3" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ╔══════════ 6 · PROCESO TIMELINE ══════════ ╗ */}
+      <section className="bg-slate-950 py-28 relative overflow-hidden grain">
+        <div className="absolute inset-0 dots-pattern opacity-20" />
+        <div className="max-w-7xl mx-auto px-6 relative">
+          <div className="text-center mb-20 reveal">
+            <p className="eyebrow-white mb-4">Cómo trabajamos</p>
+            <h2 className="text-5xl font-bold text-white leading-tight">El proceso, paso a paso.</h2>
+          </div>
+
+          <div className="grid md:grid-cols-5 gap-6 relative">
+            <div className="hidden md:block absolute top-10 left-[10%] right-[10%] h-px bg-gradient-to-r from-transparent via-blue-800 to-transparent" />
+            {[
+              { n: "01", t: "Visita técnica", d: "Relevamiento en sitio sin cargo." },
+              { n: "02", t: "Ingeniería", d: "Cálculo térmico y memoria." },
+              { n: "03", t: "Propuesta", d: "Cotización técnica detallada." },
+              { n: "04", t: "Ejecución", d: "Instalación con documentación." },
+              { n: "05", t: "Postventa", d: "Garantía y contrato de mantenimiento." },
+            ].map((p, i) => (
+              <div key={p.n} className={`relative text-center reveal reveal-d${i + 1}`}>
+                <div className="w-20 h-20 mx-auto rounded-full bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center text-white font-bold text-lg mb-5 shadow-xl ring-4 ring-slate-950 relative z-10">
+                  {p.n}
+                </div>
+                <h3 className="text-white font-semibold mb-2">{p.t}</h3>
+                <p className="text-slate-400 text-sm">{p.d}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ╔══════════ 7 · DIFERENCIALES ══════════ ╗ */}
+      <section className="bg-white py-28">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid lg:grid-cols-12 gap-12 mb-16">
+            <div className="lg:col-span-5 reveal">
+              <p className="eyebrow mb-4">Por qué Serviclima</p>
+              <h2 className="text-5xl font-bold leading-[1.05] tracking-tight">Seis razones por las que empresas líderes nos eligen.</h2>
+            </div>
+            <div className="lg:col-span-6 lg:col-start-7 reveal reveal-d1 flex items-end">
+              <p className="text-slate-600 text-lg leading-relaxed">
+                Nuestro diferencial no está solo en el equipamiento.
+                Está en la ingeniería, la documentación y el soporte que acompaña cada proyecto.
+              </p>
             </div>
           </div>
 
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              { t: "Documentación técnica", d: "Memoria descriptiva, cálculo térmico y planos as-built en cada obra.", ico: "M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" },
+              { t: "Contratos con SLA", d: "Tiempos de respuesta escritos. Sin sorpresas.", ico: "M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" },
+              { t: "Agente oficial Surrey", d: "Acceso directo a fábrica, repuestos originales y soporte prioritario.", ico: "M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" },
+              { t: "Equipos multi-marca", d: "Daikin, Carrier, Trane, Midea. Especificamos lo técnicamente correcto.", ico: "M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" },
+              { t: "Factura A garantizada", d: "Gestión administrativa transparente, desde el primer presupuesto.", ico: "M9 12h6m-6 4h6M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2h-5l-2-2H7a2 2 0 00-2 2v12a2 2 0 002 2z" },
+              { t: "Cobertura CABA + GBA", d: "Respuesta técnica real en CABA, GBA Sur, Oeste y Norte.", ico: "M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0zM15 11a3 3 0 11-6 0 3 3 0 016 0z" },
+            ].map((d, i) => (
+              <div key={d.t} className={`group bg-slate-50 hover:bg-white border border-slate-200 rounded-2xl p-7 lift reveal reveal-d${(i % 3) + 1}`}>
+                <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center mb-5 shadow-lg shadow-blue-600/20">
+                  <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path d={d.ico} strokeLinecap="round" strokeLinejoin="round" /></svg>
+                </div>
+                <h3 className="font-bold mb-2 text-lg">{d.t}</h3>
+                <p className="text-slate-600 text-sm leading-relaxed">{d.d}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ╔══════════ 8 · STATS BAND ══════════ ╗ */}
+      <section className="bg-gradient-to-br from-blue-900 via-blue-950 to-slate-950 py-20 relative overflow-hidden grain">
+        <div className="absolute inset-0 dots-pattern opacity-30" />
+        <div className="max-w-7xl mx-auto px-6 relative">
+          <div className="grid md:grid-cols-4 gap-8 md:divide-x divide-blue-800/40">
+            {[
+              { n: 20, suf: "+", l: "Años de trayectoria" },
+              { n: 500, suf: "+", l: "Instalaciones ejecutadas" },
+              { n: 98, suf: "%", l: "Contratos renovados" },
+              { n: 24, suf: "h", l: "Respuesta técnica promedio" },
+            ].map((s, i) => (
+              <div key={s.l} className={`text-center md:px-6 reveal reveal-d${i + 1}`}>
+                <div className="text-white text-5xl lg:text-6xl font-bold mb-3"><Counter end={s.n} suffix={s.suf} /></div>
+                <div className="text-blue-300/70 text-xs uppercase tracking-[0.25em]">{s.l}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ╔══════════ 9 · FAQ ACCORDION ══════════ ╗ */}
+      <section className="bg-slate-50 py-28">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="text-center mb-14 reveal">
+            <p className="eyebrow mb-4">Preguntas frecuentes</p>
+            <h2 className="text-5xl font-bold leading-tight">Resolvemos dudas comunes.</h2>
+          </div>
+          <div className="space-y-3">
+            {[
+              { q: "¿Trabajan con empresas e industrias de gran escala?", a: "Sí. La mayor parte de nuestra cartera son empresas, industrias, plantas productivas y edificios corporativos. Tenemos experiencia en proyectos de gran escala, gestión de obra llave en mano y documentación completa para auditorías." },
+              { q: "¿Emiten documentación técnica para licitaciones y auditorías?", a: "Absolutamente. Entregamos memoria descriptiva, cálculo térmico, planos as-built, certificados de instalación y toda la documentación que necesite su área técnica, legal o de compliance." },
+              { q: "¿Ofrecen contratos de mantenimiento con SLA definido?", a: "Sí. Diseñamos programas de mantenimiento preventivo con frecuencias acordadas (mensual, trimestral, semestral) e incluimos respuesta correctiva con tiempos de atención definidos y escritos en contrato." },
+              { q: "¿Son agentes oficiales de alguna marca?", a: "Somos agentes oficiales de Surrey, lo que nos da acceso directo a repuestos originales, garantía de fábrica y soporte técnico prioritario. Trabajamos con Daikin, Carrier, Trane y Midea, entre otras." },
+              { q: "¿Qué zonas de cobertura tienen?", a: "Operamos en CABA, GBA Sur, GBA Oeste y GBA Norte. Para proyectos de gran escala en el interior del país, consultenos directamente." },
+              { q: "¿Trabajan con factura A y garantía formal por escrito?", a: "Siempre. Factura A o B según corresponda, y garantía escrita en cada instalación." },
+            ].map((f, i) => (
+              <details key={i} className="acc bg-white rounded-2xl shadow-sm border border-slate-200 reveal">
+                <summary className="flex items-center justify-between p-6 gap-4">
+                  <span className="font-semibold text-slate-900 text-lg">{f.q}</span>
+                  <span className="acc-icon w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center flex-shrink-0">
+                    <svg className="w-4 h-4 text-blue-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path d="M12 4v16m8-8H4" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                  </span>
+                </summary>
+                <div className="acc-content px-6 pb-6 text-slate-600 leading-relaxed">{f.a}</div>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ╔══════════ 10 · CONTACTO PREMIUM SPLIT ══════════ ╗ */}
+      <section id="cotizacion" className="bg-white py-28 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-50 rounded-full blur-3xl opacity-60 translate-x-40" />
+        <div className="max-w-7xl mx-auto px-6 relative">
+          <div className="grid lg:grid-cols-12 gap-14 items-start">
+            {/* Izquierda */}
+            <div className="lg:col-span-5 space-y-8">
+              <div className="reveal">
+                <Image src="/serviclimas-logo-trimmed.png" width={200} height={58} className="h-12 w-auto mb-6 mix-blend-multiply" alt="Serviclimas" />
+                <p className="eyebrow mb-4">Contacto</p>
+                <h2 className="text-5xl font-bold leading-[1.05] tracking-tight mb-5">
+                  Hablemos de tu <span className="text-grad">proyecto</span>.
+                </h2>
+                <p className="text-slate-600 text-lg leading-relaxed">
+                  Visita técnica sin cargo. Cotización en 48hs. Documentación completa.
+                </p>
+              </div>
+
+              <div className="space-y-3 reveal reveal-d1">
+                {[
+                  { lbl: "Teléfono", val: "(011) 2173-2871", href: `tel:${TEL}`, ico: "M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" },
+                  { lbl: "WhatsApp", val: "Mensaje directo", href: `https://wa.me/${WHATS}`, ico: "M8 10h.01M12 10h.01M16 10h.01M9 16H5l4 4v-4h7a4 4 0 004-4V6a4 4 0 00-4-4H5a4 4 0 00-4 4v6a4 4 0 003 3.87" },
+                  { lbl: "Email", val: "serviclima@serviclim.com.ar", href: "mailto:serviclima@serviclim.com.ar", ico: "M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" },
+                  { lbl: "Horario", val: "Lun–Vie 8–19 hs · Sáb 9–14 hs", href: null, ico: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" },
+                ].map(c => {
+                  const Inner = (
+                    <>
+                      <div className="w-11 h-11 rounded-xl bg-blue-50 group-hover:bg-blue-600 flex items-center justify-center flex-shrink-0 transition-colors">
+                        <svg className="w-5 h-5 text-blue-700 group-hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path d={c.ico} strokeLinecap="round" strokeLinejoin="round" /></svg>
+                      </div>
+                      <div className="flex-1">
+                        <div className="text-xs uppercase tracking-widest text-slate-500 mb-1">{c.lbl}</div>
+                        <div className="font-semibold text-slate-900 group-hover:text-blue-700 transition-colors">{c.val}</div>
+                      </div>
+                    </>
+                  );
+                  return c.href ? (
+                    <a key={c.lbl} href={c.href} className="group flex items-center gap-4 p-4 rounded-xl bg-white border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all">{Inner}</a>
+                  ) : (
+                    <div key={c.lbl} className="flex items-center gap-4 p-4 rounded-xl bg-slate-50 border border-slate-100">{Inner}</div>
+                  );
+                })}
+              </div>
+
+              <div className="reveal reveal-d2 bg-gradient-to-br from-blue-900 to-slate-950 rounded-2xl p-8 text-white relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-40 h-40 bg-blue-500/10 rounded-full blur-2xl" />
+                <div className="relative">
+                  <div className="flex items-center gap-2 mb-3 text-[10px] font-bold tracking-[0.3em] uppercase text-blue-300">
+                    <span className="w-6 h-px bg-blue-500" />
+                    Respuesta rápida
+                  </div>
+                  <p className="text-white font-semibold text-lg leading-relaxed">
+                    Equipo técnico disponible. Cotizaciones respondidas en 48hs hábiles.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Derecha: Form */}
+            <div className="lg:col-span-7 reveal reveal-d1">
+              <div className="bg-white rounded-3xl shadow-2xl ring-1 ring-slate-200 p-8 lg:p-10">
+                <ContactForm />
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
       <StickyActions tel={TEL} whats={WHATS} />
-
     </main>
   );
 }
