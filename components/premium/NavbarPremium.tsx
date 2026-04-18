@@ -11,11 +11,11 @@ export default function NavbarPremium() {
         {/* LOGO */}
         <Link href="/" className="flex items-center gap-3">
           <Image
-            src="/serviclima-logo.png"
-            alt="Serviclima"
-            width={160}
-            height={48}
-            className="h-10 w-auto object-contain"
+            src="/serviclimas-logo.png"
+            alt="Serviclimas"
+            width={180}
+            height={50}
+            className="h-10 w-auto object-contain mix-blend-multiply"
             priority
           />
           <span className="hidden lg:block text-sm text-slate-500 border-l border-slate-200 pl-3">

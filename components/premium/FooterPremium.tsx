@@ -29,11 +29,11 @@ export default function FooterPremium() {
 
         <div>
           <Image
-            src="/serviclima-logo.png"
-            alt="Serviclima"
-            width={130}
-            height={40}
-            className="h-9 w-auto object-contain mb-4 brightness-200 opacity-80"
+            src="/serviclimas-logo.png"
+            alt="Serviclimas"
+            width={160}
+            height={45}
+            className="h-10 w-auto object-contain mb-4 mix-blend-screen opacity-90"
           />
           <p className="text-blue-200 text-sm leading-relaxed max-w-xs">
             Climatización profesional para empresas, industrias y edificios corporativos.

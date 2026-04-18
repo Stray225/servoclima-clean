@@ -12,11 +12,11 @@ export default function Navbar() {
         {/* IZQUIERDA: LOGO + TEXTO */}
         <Link href="/" className="flex items-center gap-3">
           <Image
-            src="/serviclima-logo.png"
-            alt="Serviclima"
-            width={140}
-            height={40}
-            className="h-10 w-auto object-contain"
+            src="/serviclimas-logo.png"
+            alt="Serviclimas"
+            width={160}
+            height={45}
+            className="h-10 w-auto object-contain mix-blend-multiply dark:mix-blend-screen"
             priority
           />
 

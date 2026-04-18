@@ -31,14 +31,14 @@ export const metadata: Metadata = {
     url: `${SITE_URL}/premium`,
     locale: "es_AR",
     siteName: "Serviclima",
-    images: [{ url: "/serviclima-logo.png", width: 400, height: 120, alt: "Serviclima" }],
+    images: [{ url: "/serviclimas-logo.png", width: 400, height: 120, alt: "Serviclima" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Serviclima | Climatización industrial y corporativa · CABA y GBA",
     description:
       "Ingeniería, instalación y mantenimiento de climatización para empresas. VRF/VRV, chillers, contratos con SLA. CABA y GBA.",
-    images: ["/serviclima-logo.png"],
+    images: ["/serviclimas-logo.png"],
   },
   alternates: {
     canonical: `${SITE_URL}/premium`,

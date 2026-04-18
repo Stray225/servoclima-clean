@@ -45,14 +45,14 @@ export const metadata: Metadata = {
     url: SITE_URL,
     locale: "es_AR",
     siteName: "Serviclima",
-    images: [{ url: "/serviclima-logo.png", width: 400, height: 120, alt: "Serviclima" }],
+    images: [{ url: "/serviclimas-logo.png", width: 400, height: 120, alt: "Serviclima" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Serviclima | Instalación y service de aire acondicionado · CABA y GBA",
     description:
       "Instalación, service y mantenimiento de aire acondicionado en CABA y GBA. Agente oficial Surrey.",
-    images: ["/serviclima-logo.png"],
+    images: ["/serviclimas-logo.png"],
   },
   icons: {
     icon: "/favicon.ico",
@@ -70,7 +70,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     url: SITE_URL,
     telephone: PHONE_E164,
     email: EMAIL,
-    image: `${SITE_URL}/serviclima-logo.png`,
+    image: `${SITE_URL}/serviclimas-logo.png`,
     description:
       "Instalación, service y mantenimiento de aire acondicionado en CABA y GBA. Especialistas en splits, VRF/VRV, chillers y proyectos termomecánicos para empresas e industrias.",
     priceRange: "$$",
