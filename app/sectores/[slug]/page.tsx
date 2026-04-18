@@ -123,7 +123,7 @@ const SECTORES: Sector[] = [
     titulo: "Ambiental",
     headline: "Climatización con compromiso ambiental",
     intro: "Diseñamos sistemas de climatización eficientes que reducen el consumo energético, utilizan refrigerantes con menor potencial de calentamiento global y acompañan las políticas de sustentabilidad corporativa de nuestros clientes.",
-    img: "/iconos/eco21.png",
+    img: "https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=1600&q=85",
     puntos: [
       { t: "Menor consumo energético", d: "Equipos de alta eficiencia con certificación A++ que reducen el OPEX operativo." },
       { t: "Refrigerantes sustentables", d: "Gases con bajo potencial de calentamiento global (GWP) alineados a normativa vigente." },

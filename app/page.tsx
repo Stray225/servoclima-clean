@@ -64,13 +64,30 @@ export default function Page() {
               {[
                 { k: "20+", v: "años de experiencia industrial" },
                 { k: "500+", v: "instalaciones ejecutadas" },
-                { k: "Surrey", v: "agente oficial · repuestos originales" },
               ].map(s => (
                 <div key={s.k}>
                   <div className="text-white text-3xl font-bold mb-1">{s.k}</div>
                   <div className="text-blue-300/50 text-xs uppercase tracking-widest">{s.v}</div>
                 </div>
               ))}
+
+              {/* Surrey oficial badge */}
+              <div className="pt-6 border-t border-blue-900/40">
+                <div className="inline-flex items-center gap-4 bg-white/95 rounded-xl px-4 py-3 shadow-xl">
+                  <Image
+                    src="/surrey-agente-navbar.png"
+                    alt="Agente Oficial Surrey"
+                    width={110}
+                    height={48}
+                    className="object-contain"
+                    priority
+                  />
+                  <div className="text-left border-l border-slate-200 pl-4">
+                    <div className="text-[10px] font-bold tracking-[0.2em] uppercase text-blue-700">Agente Oficial</div>
+                    <div className="text-xs text-slate-600">Repuestos originales</div>
+                  </div>
+                </div>
+              </div>
             </div>
 
           </div>
@@ -154,25 +171,25 @@ export default function Page() {
               </div>
             </Link>
 
-            <Link href="/sectores/proyectos-especiales" className="md:col-span-2 relative group h-[240px] rounded-3xl overflow-hidden bg-gradient-to-br from-blue-900 to-slate-900 reveal reveal-d2 block">
-              <div className="relative p-6 h-full flex flex-col justify-between text-white">
-                <p className="text-blue-300 text-[10px] font-bold tracking-[0.3em] uppercase">06</p>
-                <div>
-                  <h3 className="text-xl font-bold mb-2">Proyectos especiales</h3>
-                  <p className="text-white/60 text-xs">Obras llave en mano en todo el país</p>
-                </div>
+            <Link href="/sectores/proyectos-especiales" className="md:col-span-2 relative group h-[240px] rounded-3xl overflow-hidden zoom-wrap reveal reveal-d2 block">
+              <Image src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1200&q=80" fill alt="Proyectos de ingeniería y obra" className="object-cover" sizes="(max-width:768px) 100vw, 33vw" />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/50 to-transparent" />
+              <div className="absolute inset-x-0 bottom-0 p-6 text-white">
+                <p className="text-blue-300 text-[10px] font-bold tracking-[0.3em] uppercase mb-1">06</p>
+                <h3 className="text-xl font-bold">Proyectos especiales</h3>
               </div>
             </Link>
 
-            <Link href="/sectores/ambiental" className="md:col-span-6 relative group h-[200px] rounded-3xl overflow-hidden bg-gradient-to-br from-emerald-700 via-emerald-800 to-slate-900 reveal reveal-d3 block">
-              <div className="absolute inset-0 dots-pattern opacity-15" />
+            <Link href="/sectores/ambiental" className="md:col-span-6 relative group h-[220px] rounded-3xl overflow-hidden zoom-wrap reveal reveal-d3 block">
+              <Image src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=1800&q=80" fill alt="Compromiso ambiental y energía sustentable" className="object-cover" sizes="100vw" />
+              <div className="absolute inset-0 bg-gradient-to-r from-emerald-950/90 via-emerald-950/70 to-emerald-950/30" />
               <div className="relative p-8 h-full flex items-center justify-between gap-8">
                 <div className="flex-1">
                   <p className="text-emerald-300 text-[10px] font-bold tracking-[0.3em] uppercase mb-2">07 · Área ambiental</p>
                   <h3 className="text-white text-2xl lg:text-3xl font-bold mb-2">Climatización con compromiso ambiental</h3>
-                  <p className="text-emerald-100/70 text-sm max-w-2xl">Eficiencia energética, refrigerantes sustentables y documentación para reportes ESG.</p>
+                  <p className="text-emerald-100/80 text-sm max-w-2xl">Eficiencia energética, refrigerantes sustentables y documentación para reportes ESG.</p>
                 </div>
-                <span className="inline-flex items-center gap-2 text-xs font-bold tracking-[0.2em] uppercase text-white bg-white/10 border border-white/20 rounded-full px-4 py-2 group-hover:bg-white/20 transition flex-shrink-0">
+                <span className="inline-flex items-center gap-2 text-xs font-bold tracking-[0.2em] uppercase text-white bg-white/10 border border-white/20 rounded-full px-4 py-2 group-hover:bg-white/20 transition flex-shrink-0 backdrop-blur-sm">
                   Ver sector
                   <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path d="M17 8l4 4m0 0l-4 4m4-4H3" strokeLinecap="round" strokeLinejoin="round" /></svg>
                 </span>
@@ -346,16 +363,29 @@ export default function Page() {
           </div>
 
           <div className="grid md:grid-cols-5 gap-4">
+            {/* Surrey card con imagen oficial */}
+            <div className="text-center p-6 rounded-2xl bg-gradient-to-br from-blue-600 to-blue-800 text-white shadow-xl ring-1 ring-blue-500 reveal reveal-d1 flex flex-col items-center justify-center">
+              <div className="bg-white rounded-lg px-3 py-2 mb-3">
+                <Image
+                  src="/surrey-agente-navbar.png"
+                  alt="Agente Oficial Surrey"
+                  width={130}
+                  height={55}
+                  className="object-contain"
+                />
+              </div>
+              <div className="text-[10px] uppercase tracking-[0.2em] font-semibold text-blue-200">Agente oficial</div>
+            </div>
+
             {[
-              { n: "Surrey", sub: "Agente oficial", highlight: true },
               { n: "Daikin", sub: "VRF / VRV" },
               { n: "Carrier", sub: "Sistemas centrales" },
               { n: "Trane", sub: "Chillers industriales" },
               { n: "Midea", sub: "Línea comercial" },
             ].map((b, i) => (
-              <div key={b.n} className={`text-center p-6 rounded-2xl transition-all reveal reveal-d${(i % 4) + 1} ${b.highlight ? "bg-gradient-to-br from-blue-600 to-blue-800 text-white shadow-xl ring-1 ring-blue-500" : "bg-white border border-slate-200 text-slate-900 lift"}`}>
-                <div className={`text-2xl font-bold tracking-tight ${b.highlight ? "text-white" : "text-slate-900"}`}>{b.n}</div>
-                <div className={`text-[10px] uppercase tracking-[0.2em] font-semibold mt-2 ${b.highlight ? "text-blue-200" : "text-slate-500"}`}>{b.sub}</div>
+              <div key={b.n} className={`text-center p-6 rounded-2xl bg-white border border-slate-200 text-slate-900 lift transition-all reveal reveal-d${(i % 4) + 2} flex flex-col items-center justify-center`}>
+                <div className="text-2xl font-bold tracking-tight text-slate-900">{b.n}</div>
+                <div className="text-[10px] uppercase tracking-[0.2em] font-semibold mt-2 text-slate-500">{b.sub}</div>
               </div>
             ))}
           </div>
