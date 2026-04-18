@@ -17,11 +17,13 @@ export default function TrustBar() {
     <section className="max-w-7xl mx-auto px-6 py-1" aria-label="Clientes que confían en Serviclima">
 
       {/* Header */}
-      <div className="text-center mb-3">
+      <div className="text-center mb-10 reveal">
+        <p className="text-blue-600 font-semibold text-sm uppercase tracking-widest mb-3">Quiénes nos eligen</p>
         <h2 className="text-4xl font-bold mb-3">
           Clientes que confían en nosotros
         </h2>
-        <p className="text-slate-600 dark:text-slate-300 text-lg max-w-2xl mx-auto">
+        <div className="w-12 h-1 bg-blue-600 rounded mx-auto mb-4" />
+        <p className="text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
           Empresas líderes que operan con estándares industriales y confían
           en Serviclima para la climatización de sus instalaciones.
         </p>
@@ -32,16 +34,8 @@ export default function TrustBar() {
         {CLIENTS.map((c, i) => (
           <div
             key={i}
-            className="
-              bg-white dark:bg-slate-900
-              border border-slate-200 dark:border-slate-700
-              rounded-2xl
-              h-[300px]
-              flex flex-col justify-between
-              p-4
-              shadow-sm
-              hover:shadow-lg transition
-            "
+            style={{ transitionDelay: `${i * 60}ms` }}
+            className="reveal bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-2xl h-[260px] flex flex-col justify-between p-4 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
           >
             {/* LOGO */}
             <div className="relative flex-1 w-full">

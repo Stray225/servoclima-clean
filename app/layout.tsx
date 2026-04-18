@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ScrollReveal from "@/components/ScrollReveal";
 import Script from "next/script";
 
 const SITE_URL = "https://serviclim.ar";
@@ -185,6 +186,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </Script>
       </head>
       <body className="bg-slate-50 text-slate-900">
+        <ScrollReveal />
         <Navbar />
         {children}
         <Footer />
