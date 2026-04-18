@@ -12,12 +12,12 @@ export default function Navbar() {
         {/* IZQUIERDA: LOGO */}
         <Link href="/" className="flex items-center gap-3">
           <Image
-            src="/serviclimas-logo2.png"
+            src="/serviclimas-logo-trimmed.png"
             alt="Serviclimas"
             width={400}
-            height={120}
+            height={121}
             className="w-auto object-contain mix-blend-multiply dark:mix-blend-screen"
-            style={{height: "90px"}}
+            style={{height: "72px"}}
             priority
           />
           <span className="hidden md:block text-sm text-slate-600 dark:text-slate-300">
