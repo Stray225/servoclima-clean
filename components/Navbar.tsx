@@ -6,23 +6,19 @@ import ThemeToggle from "./ThemeToggle";
 
 export default function Navbar() {
   return (
-    <header className="w-full border-b border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-slate-900/90 backdrop-blur supports-[backdrop-filter]:bg-white/70 dark:supports-[backdrop-filter]:bg-slate-900/80">
-      <nav className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+    <header className="w-full border-b-4 border-blue-700 bg-white/95 dark:bg-slate-900/90 backdrop-blur supports-[backdrop-filter]:bg-white/70 dark:supports-[backdrop-filter]:bg-slate-900/80">
+      <nav className="max-w-7xl mx-auto px-6 py-0 flex items-stretch justify-between">
 
-        {/* IZQUIERDA: LOGO + TEXTO */}
-        <Link href="/" className="flex items-center gap-3">
+        {/* IZQUIERDA: LOGO */}
+        <Link href="/" className="flex items-stretch">
           <Image
             src="/serviclimas-logo2.png"
             alt="Serviclimas"
-            width={320}
-            height={90}
-            className="h-20 w-auto object-contain mix-blend-multiply dark:mix-blend-screen"
+            width={340}
+            height={96}
+            className="h-24 w-auto object-contain mix-blend-multiply dark:mix-blend-screen"
             priority
           />
-
-          <span className="hidden md:block text-sm text-slate-600 dark:text-slate-300">
-            Serviclima Heating & Cooling SRL
-          </span>
         </Link>
 
         {/* DERECHA: SURREY + TOGGLE */}
