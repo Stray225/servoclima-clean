@@ -156,7 +156,7 @@ export default function Page() {
       </section>
 
       {/* ╔══════════ 4 · SECTORES (BENTO) ══════════ ╗ */}
-      <section id="sectores" className="bg-slate-50 py-28 relative">
+      <section id="sectores" className="bg-slate-50 py-28 relative scroll-mt-20">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex items-end justify-between mb-14 reveal">
             <div>
@@ -237,7 +237,7 @@ export default function Page() {
       </section>
 
       {/* ╔══════════ 5 · SERVICIOS EDITORIAL ALT ══════════ ╗ */}
-      <section id="servicios" className="bg-white py-28 relative overflow-hidden">
+      <section id="servicios" className="bg-white py-28 relative overflow-hidden scroll-mt-20">
         <div className="max-w-7xl mx-auto px-6 mb-20 reveal">
           <p className="eyebrow mb-4">Servicios</p>
           <h2 className="text-5xl font-bold leading-tight max-w-3xl">Cuatro áreas de trabajo. Un estándar de calidad.</h2>
@@ -284,7 +284,7 @@ export default function Page() {
       </section>
 
       {/* ╔══════════ 6 · PROCESO TIMELINE ══════════ ╗ */}
-      <section className="bg-slate-950 py-28 relative overflow-hidden grain">
+      <section id="proceso" className="bg-slate-950 py-28 relative overflow-hidden grain scroll-mt-20">
         <div className="absolute inset-0 dots-pattern opacity-20" />
         <div className="max-w-7xl mx-auto px-6 relative">
           <div className="text-center mb-20 reveal">
@@ -401,7 +401,7 @@ export default function Page() {
       </section>
 
       {/* ╔══════════ 10 · CONTACTO PREMIUM SPLIT ══════════ ╗ */}
-      <section id="cotizacion" className="bg-white py-28 relative overflow-hidden">
+      <section id="cotizacion" className="bg-white py-28 relative overflow-hidden scroll-mt-20">
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-50 rounded-full blur-3xl opacity-60 translate-x-40" />
         <div className="max-w-7xl mx-auto px-6 relative">
           <div className="grid lg:grid-cols-12 gap-14 items-start">
