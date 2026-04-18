@@ -1,7 +1,7 @@
 "use client";
 
-const TEL = "+541123579760";
-const WHATS = "5491123579760";
+const TEL = "+541121732871";
+const WHATS = "5491121732871";
 
 export default function StickyActionsPremium() {
   return (

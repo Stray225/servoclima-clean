@@ -6,8 +6,8 @@ import TrustBar from "@/components/TrustBar";
 import ContactForm from "@/components/ContactForm";
 import StickyActions from "@/components/StickyActions";
 
-const WHATS = "5491123579760";
-const TEL = "+541123579760";
+const WHATS = "5491121732871";
+const TEL = "+541121732871";
 
 export const metadata: Metadata = {
   title: "Instalación y service de aire acondicionado · CABA y GBA",

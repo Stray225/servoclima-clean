@@ -6,8 +6,9 @@ import Script from "next/script";
 
 const SITE_URL = "https://serviclim.ar";
 const BUSINESS_NAME = "Serviclima";
-const PHONE_E164 = "+541123579760";
-const PHONE_HUMAN = "(011) 2357-9760";
+const PHONE_E164 = "+541121732871";
+const PHONE_HUMAN = "(011) 2173-2871";
+const EMAIL = "serviclima@serviclim.com.ar";
 const AREAS = [
   "Ciudad Autónoma de Buenos Aires",
   "Gran Buenos Aires Sur",
@@ -68,6 +69,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     name: "Serviclima Heating & Cooling S.R.L.",
     url: SITE_URL,
     telephone: PHONE_E164,
+    email: EMAIL,
     image: `${SITE_URL}/serviclima-logo.png`,
     description:
       "Instalación, service y mantenimiento de aire acondicionado en CABA y GBA. Especialistas en splits, VRF/VRV, chillers y proyectos termomecánicos para empresas e industrias.",

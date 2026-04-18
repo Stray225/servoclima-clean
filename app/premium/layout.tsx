@@ -54,7 +54,8 @@ export default function PremiumLayout({ children }: { children: React.ReactNode 
       "@type": "HVACBusiness",
       name: "Serviclima Heating & Cooling S.R.L.",
       url: SITE_URL,
-      telephone: "+541123579760",
+      telephone: "+541121732871",
+      email: "serviclima@serviclim.com.ar",
       areaServed: [
         "Ciudad Autónoma de Buenos Aires",
         "Gran Buenos Aires Sur",

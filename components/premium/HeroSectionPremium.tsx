@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 
-const WHATS = "5491123579760";
+const WHATS = "5491121732871";
 
 export default function HeroSectionPremium() {
   return (

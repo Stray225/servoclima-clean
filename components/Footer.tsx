@@ -18,23 +18,33 @@ export default function Footer() {
         <div className="text-sm space-y-2">
           <p>
             <a
-              href="tel:+541123579760"
-              aria-label="Llamar a Serviclima al (011) 2357-9760"
+              href="tel:+541121732871"
+              aria-label="Llamar a Serviclima al (011) 2173-2871"
               className="hover:text-blue-300 transition"
             >
-              <span aria-hidden="true">📞 </span>(011) 2357-9760
+              <span aria-hidden="true">📞 </span>(011) 2173-2871
             </a>
           </p>
 
           <p>
             <a
-              href="https://wa.me/5491123579760"
+              href="https://wa.me/5491121732871"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Contactar a Serviclima por WhatsApp"
               className="hover:text-blue-300 transition"
             >
               <span aria-hidden="true">💬 </span>WhatsApp directo
+            </a>
+          </p>
+
+          <p>
+            <a
+              href="mailto:serviclima@serviclim.com.ar"
+              aria-label="Enviar email a Serviclima"
+              className="hover:text-blue-300 transition"
+            >
+              <span aria-hidden="true">✉ </span>serviclima@serviclim.com.ar
             </a>
           </p>
         </div>

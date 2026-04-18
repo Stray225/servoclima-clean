@@ -3,8 +3,9 @@
 import { useState } from "react";
 import Image from "next/image";
 
-const TEL = "+541123579760";
-const WHATS = "5491123579760";
+const TEL = "+541121732871";
+const WHATS = "5491121732871";
+const EMAIL = "serviclima@serviclim.com.ar";
 
 const TIPOS = [
   "Instalación de sistema nuevo",
@@ -198,7 +199,7 @@ export default function ContactSectionPremium() {
                 </svg>
               </div>
               <div>
-                <div className="font-semibold text-slate-900 text-sm">(011) 2357-9760</div>
+                <div className="font-semibold text-slate-900 text-sm">(011) 2173-2871</div>
                 <div className="text-xs text-slate-500">Lun–Vie 8–19 hs · Sáb 9–14 hs</div>
               </div>
             </a>
@@ -218,6 +219,18 @@ export default function ContactSectionPremium() {
               <div>
                 <div className="font-semibold text-slate-900 text-sm">WhatsApp directo</div>
                 <div className="text-xs text-slate-500">Respuesta rápida</div>
+              </div>
+            </a>
+
+            <a href={`mailto:${EMAIL}`} className="flex items-center gap-3 group">
+              <div className="w-10 h-10 rounded-lg bg-slate-100 border border-slate-200 group-hover:border-blue-300 flex items-center justify-center transition">
+                <svg className="w-5 h-5 text-slate-500 group-hover:text-blue-700 transition" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <div>
+                <div className="font-semibold text-slate-900 text-sm">{EMAIL}</div>
+                <div className="text-xs text-slate-500">Consultas formales y licitaciones</div>
               </div>
             </a>
           </div>
