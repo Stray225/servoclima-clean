@@ -283,6 +283,61 @@ export default function Page() {
         </div>
       </section>
 
+      {/* ╔══════════ 5.5 · CASOS DE ÉXITO ══════════ ╗ */}
+      <section id="casos" className="bg-slate-50 py-28 relative">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid lg:grid-cols-12 gap-10 mb-14">
+            <div className="lg:col-span-6 reveal">
+              <p className="eyebrow mb-4">Casos de éxito</p>
+              <h2 className="text-5xl font-bold leading-[1.05] tracking-tight">Proyectos que <span className="text-grad">resolvemos</span>.</h2>
+            </div>
+            <div className="lg:col-span-5 lg:col-start-8 reveal reveal-d1 flex items-end">
+              <p className="text-slate-600 text-lg leading-relaxed">
+                Cada instalación responde a un cálculo térmico propio y a los
+                requerimientos operativos específicos del cliente.
+              </p>
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              { tipo: "Planta industrial", meta: "Alimentos · GBA", m: "3.200m²", e: "VRF 120HP", k: "24/7 operación crítica", img: "/fotoslide1.webp" },
+              { tipo: "Edificio corporativo", meta: "Zona Norte · CABA", m: "12 pisos", e: "Sistema central", k: "Eficiencia energética A", img: "/fotoslide2.webp" },
+              { tipo: "Centro logístico", meta: "Retail · GBA Sur", m: "5.000m²", e: "Rooftops + splits", k: "Climatización de oficinas y depósito", img: "/equipos3.png" },
+            ].map((c, i) => (
+              <div key={i} className={`group relative overflow-hidden rounded-3xl zoom-wrap shadow-lg ring-1 ring-slate-200 reveal reveal-d${i + 1}`}>
+                <div className="relative aspect-[4/5]">
+                  <Image src={c.img} alt={c.tipo} fill className="object-cover" sizes="(max-width:768px) 100vw, 33vw" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent" />
+                </div>
+                <div className="absolute inset-0 p-7 flex flex-col justify-between text-white">
+                  <div className="inline-flex items-center gap-2 text-[10px] font-bold tracking-[0.3em] uppercase text-blue-300 self-start bg-blue-950/50 backdrop-blur-sm px-3 py-1.5 rounded-full">
+                    {c.meta}
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold mb-4">{c.tipo}</h3>
+                    <div className="grid grid-cols-2 gap-3 pt-4 border-t border-white/20">
+                      <div>
+                        <div className="text-xs text-blue-300/70 uppercase tracking-widest mb-1">Área</div>
+                        <div className="font-bold text-lg">{c.m}</div>
+                      </div>
+                      <div>
+                        <div className="text-xs text-blue-300/70 uppercase tracking-widest mb-1">Equipos</div>
+                        <div className="font-bold text-lg">{c.e}</div>
+                      </div>
+                    </div>
+                    <div className="mt-4 text-sm text-white/80 flex items-center gap-2">
+                      <span className="w-4 h-px bg-blue-400" />
+                      {c.k}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ╔══════════ 6 · PROCESO TIMELINE ══════════ ╗ */}
       <section id="proceso" className="bg-slate-950 py-28 relative overflow-hidden grain scroll-mt-20">
         <div className="absolute inset-0 dots-pattern opacity-20" />
@@ -350,6 +405,41 @@ export default function Page() {
         </div>
       </section>
 
+      {/* ╔══════════ 7.5 · MARCAS QUE INSTALAMOS ══════════ ╗ */}
+      <section className="bg-gradient-to-b from-white to-slate-50 py-24">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-14 reveal">
+            <p className="eyebrow mb-4">Equipamiento</p>
+            <h2 className="text-4xl font-bold mb-4">Marcas con las que trabajamos</h2>
+            <p className="text-slate-600 max-w-2xl mx-auto">
+              Especificamos el equipamiento que mejor resuelve el proyecto. Sin compromisos comerciales que comprometan la ingeniería.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-5 gap-4 mb-10">
+            {[
+              { n: "Surrey", sub: "Agente oficial", highlight: true },
+              { n: "Daikin", sub: "VRF / VRV" },
+              { n: "Carrier", sub: "Sistemas centrales" },
+              { n: "Trane", sub: "Chillers industriales" },
+              { n: "Midea", sub: "Línea comercial" },
+            ].map((b, i) => (
+              <div
+                key={b.n}
+                className={`text-center p-6 rounded-2xl transition-all reveal reveal-d${(i % 4) + 1} ${
+                  b.highlight
+                    ? "bg-gradient-to-br from-blue-600 to-blue-800 text-white shadow-xl ring-1 ring-blue-500"
+                    : "bg-white border border-slate-200 text-slate-900 lift"
+                }`}
+              >
+                <div className={`text-2xl font-bold tracking-tight ${b.highlight ? "text-white" : "text-slate-900"}`}>{b.n}</div>
+                <div className={`text-[10px] uppercase tracking-[0.2em] font-semibold mt-2 ${b.highlight ? "text-blue-200" : "text-slate-500"}`}>{b.sub}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ╔══════════ 8 · STATS BAND ══════════ ╗ */}
       <section className="bg-gradient-to-br from-blue-900 via-blue-950 to-slate-950 py-20 relative overflow-hidden grain">
         <div className="absolute inset-0 dots-pattern opacity-30" />
@@ -396,6 +486,51 @@ export default function Page() {
                 <div className="acc-content px-6 pb-6 text-slate-600 leading-relaxed">{f.a}</div>
               </details>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ╔══════════ 9.5 · COBERTURA ══════════ ╗ */}
+      <section className="bg-white py-28 relative overflow-hidden">
+        <div className="absolute top-20 left-0 w-96 h-96 bg-blue-50 rounded-full blur-3xl opacity-60 -translate-x-40" />
+        <div className="max-w-7xl mx-auto px-6 relative">
+          <div className="grid lg:grid-cols-12 gap-14 items-center">
+            <div className="lg:col-span-5 reveal">
+              <p className="eyebrow mb-4">Cobertura</p>
+              <h2 className="text-5xl font-bold leading-[1.05] tracking-tight mb-5">
+                Operamos en <span className="text-grad">toda el área metropolitana</span>.
+              </h2>
+              <p className="text-slate-600 text-lg leading-relaxed mb-8">
+                Equipo técnico distribuido en las 4 zonas. Respuesta rápida
+                para service correctivo y mantenimiento preventivo.
+              </p>
+              <a href="#cotizacion" className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:gap-3 transition-all">
+                Consultar cobertura específica
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path d="M17 8l4 4m0 0l-4 4m4-4H3" strokeLinecap="round" strokeLinejoin="round" /></svg>
+              </a>
+            </div>
+
+            <div className="lg:col-span-7 reveal reveal-d1">
+              <div className="grid grid-cols-2 gap-4">
+                {[
+                  { z: "CABA", d: "Ciudad Autónoma de Buenos Aires", zonas: "48 barrios" },
+                  { z: "GBA Norte", d: "Vicente López, San Isidro, Tigre, Pilar, San Fernando", zonas: "12 partidos" },
+                  { z: "GBA Oeste", d: "Morón, Hurlingham, Ituzaingó, Merlo, Moreno, Luján", zonas: "10 partidos" },
+                  { z: "GBA Sur", d: "Avellaneda, Lanús, Lomas de Zamora, Quilmes, Berazategui", zonas: "9 partidos" },
+                ].map((c, i) => (
+                  <div key={c.z} className={`group relative p-6 rounded-2xl bg-gradient-to-br from-slate-50 to-white border border-slate-200 lift reveal reveal-d${i + 1}`}>
+                    <div className="flex items-start justify-between mb-3">
+                      <div className="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center shadow-lg shadow-blue-600/20">
+                        <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0zM15 11a3 3 0 11-6 0 3 3 0 016 0z" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                      </div>
+                      <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-blue-600">{c.zonas}</span>
+                    </div>
+                    <div className="text-lg font-bold text-slate-900 mb-1">{c.z}</div>
+                    <p className="text-sm text-slate-500 leading-relaxed">{c.d}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
