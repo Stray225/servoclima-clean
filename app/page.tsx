@@ -34,6 +34,11 @@ export default function Page() {
         <div className="max-w-7xl mx-auto px-6 py-24 grid lg:grid-cols-2 gap-16 items-center">
 
           <div>
+            {/* Logo en hero */}
+            <div className="inline-block bg-white rounded-xl px-4 py-2 mb-7 shadow-md">
+              <Image src="/serviclimas-logo-trimmed.png" width={180} height={52} className="h-10 w-auto" alt="Serviclimas" />
+            </div>
+
             <p className="inline-flex items-center gap-2 text-blue-300 text-sm font-medium mb-6 border border-blue-700/50 rounded-full px-4 py-1.5">
               <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse" />
               Empresarial · Comercial · Residencial selectivo
@@ -77,6 +82,23 @@ export default function Page() {
         </div>
         <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white/5 to-transparent pointer-events-none" />
       </section>
+
+      {/* ================= STATS ================= */}
+      <div className="bg-slate-900 text-white">
+        <div className="max-w-7xl mx-auto px-6 py-8 grid grid-cols-2 md:grid-cols-4 divide-x divide-slate-700/50">
+          {[
+            { num: "+20", label: "años de experiencia" },
+            { num: "+500", label: "instalaciones realizadas" },
+            { num: "CABA", label: "y todo el GBA" },
+            { num: "Surrey", label: "agente oficial" },
+          ].map((s) => (
+            <div key={s.num} className="text-center px-4 py-2 reveal">
+              <div className="text-2xl font-bold text-blue-400">{s.num}</div>
+              <div className="text-slate-400 text-xs mt-1">{s.label}</div>
+            </div>
+          ))}
+        </div>
+      </div>
 
       {/* ================= CLIENTES ================= */}
       <section aria-label="Clientes" className="bg-white dark:bg-slate-900 py-16">
@@ -157,6 +179,7 @@ export default function Page() {
           <div className="space-y-8">
 
             <div className="reveal">
+              <Image src="/serviclimas-logo-trimmed.png" width={200} height={58} className="h-12 w-auto mix-blend-multiply mb-5" alt="Serviclimas" />
               <p className="text-blue-700 font-semibold text-sm uppercase tracking-widest mb-3">Nuestra empresa</p>
               <h2 className="text-4xl font-bold mb-3 leading-tight">
                 Ingeniería en climatización pensada para operar
@@ -230,32 +253,58 @@ export default function Page() {
       </section>
 
       {/* ================= COMPROMISO AMBIENTAL ================= */}
-      <section aria-label="Compromiso ambiental" className="bg-green-50 dark:bg-slate-900 py-24">
-        <div className="max-w-7xl mx-auto px-6">
+      <section aria-label="Compromiso ambiental" className="bg-white dark:bg-slate-900 py-20">
+        <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
 
-          <h2 className="text-4xl font-bold mb-6">Compromiso ambiental</h2>
+          {/* Texto */}
+          <div className="reveal">
+            <p className="text-green-600 font-semibold text-sm uppercase tracking-widest mb-3">Sustentabilidad</p>
+            <h2 className="text-4xl font-bold mb-3">Compromiso ambiental</h2>
+            <div className="w-12 h-1 bg-green-500 rounded mb-6" />
+            <p className="text-slate-600 dark:text-slate-300 leading-relaxed mb-8">
+              Diseñamos sistemas de climatización eficientes que reducen el consumo
+              energético, optimizan recursos y disminuyen el impacto ambiental,
+              acompañando políticas modernas de sustentabilidad corporativa.
+            </p>
+            <div className="space-y-4">
+              {[
+                { icon: "M13 10V3L4 14h7v7l9-11h-7z", label: "Menor consumo energético", desc: "Equipos de alta eficiencia con certificación energética" },
+                { icon: "M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064", label: "Refrigerantes sustentables", desc: "Gases con bajo potencial de calentamiento global" },
+                { icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z", label: "Documentación técnica completa", desc: "Informes de eficiencia y auditorías energéticas" },
+              ].map((b) => (
+                <div key={b.label} className="flex items-start gap-4 p-4 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700">
+                  <div className="w-9 h-9 rounded-lg bg-green-100 flex items-center justify-center flex-shrink-0">
+                    <svg className="w-4 h-4 text-green-700" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={b.icon} /></svg>
+                  </div>
+                  <div>
+                    <p className="font-semibold text-sm text-slate-900 dark:text-white">{b.label}</p>
+                    <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">{b.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
 
-          <p className="text-slate-700 dark:text-slate-300 max-w-3xl mb-12">
-            Diseñamos sistemas de climatización eficientes que reducen el consumo
-            energético, optimizan recursos y disminuyen el impacto ambiental,
-            acompañando políticas modernas de sustentabilidad corporativa.
-          </p>
-
-          <div className="grid md:grid-cols-2 gap-12">
+          {/* Imágenes */}
+          <div className="reveal reveal-d1 grid grid-cols-2 gap-4">
             <Image
               src="/iconos/eco21.png"
               alt="Sistemas de climatización eficientes y de bajo consumo energético"
-              width={800}
-              height={600}
-              className="rounded-2xl shadow-lg object-cover"
+              width={600}
+              height={700}
+              className="rounded-2xl shadow-md object-cover w-full h-full col-span-1 row-span-2"
             />
             <Image
               src="/iconos/eco2.png"
               alt="Tecnología de climatización sustentable"
-              width={800}
-              height={600}
-              className="rounded-2xl shadow-lg object-cover"
+              width={600}
+              height={400}
+              className="rounded-2xl shadow-md object-cover w-full"
             />
+            <div className="rounded-2xl bg-green-600 p-5 flex flex-col justify-center">
+              <p className="text-white font-bold text-2xl">A++</p>
+              <p className="text-green-100 text-xs mt-1">Eficiencia energética en todos los proyectos</p>
+            </div>
           </div>
 
         </div>
