@@ -338,6 +338,42 @@ export default function Page() {
         </div>
       </section>
 
+      {/* ╔══════════ 5.75 · GALERÍA DE OBRAS ══════════ ╗ */}
+      <section id="galeria" className="bg-white py-28 relative">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex items-end justify-between mb-12 reveal">
+            <div>
+              <p className="eyebrow mb-4">Galería de obras</p>
+              <h2 className="text-5xl font-bold leading-tight max-w-2xl">Proyectos <span className="text-grad">en imágenes</span>.</h2>
+            </div>
+            <a href="#cotizacion" className="hidden md:inline-flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-800 transition">
+              Consultar más proyectos
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path d="M17 8l4 4m0 0l-4 4m4-4H3" strokeLinecap="round" strokeLinejoin="round" /></svg>
+            </a>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 auto-rows-[180px] gap-4">
+            {[
+              { src: "/fotoslide1.webp", span: "md:col-span-2 md:row-span-2", cap: "Planta industrial · VRF" },
+              { src: "/fotoslide2.webp", span: "md:col-span-2", cap: "Corporativo · Sistema central" },
+              { src: "/equipos2.png", span: "md:col-span-1", cap: "Instalación comercial" },
+              { src: "/equipos3.png", span: "md:col-span-1", cap: "Climatización de precisión" },
+              { src: "/fotoslide3.webp", span: "md:col-span-2", cap: "Obra termomecánica" },
+              { src: "/equipos4.png", span: "md:col-span-2", cap: "Mantenimiento industrial" },
+            ].map((g, i) => (
+              <div key={i} className={`relative ${g.span} rounded-2xl overflow-hidden zoom-wrap group reveal reveal-d${(i % 4) + 1}`}>
+                <Image src={g.src} fill alt={g.cap} className="object-cover" sizes="(max-width:768px) 50vw, 25vw" />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity" />
+                <div className="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-all translate-y-2 group-hover:translate-y-0 duration-300">
+                  <p className="text-[10px] font-bold tracking-[0.3em] uppercase text-blue-300 mb-1">Obra</p>
+                  <p className="text-sm font-semibold">{g.cap}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ╔══════════ 6 · PROCESO TIMELINE ══════════ ╗ */}
       <section id="proceso" className="bg-slate-950 py-28 relative overflow-hidden grain scroll-mt-20">
         <div className="absolute inset-0 dots-pattern opacity-20" />
@@ -405,6 +441,50 @@ export default function Page() {
         </div>
       </section>
 
+      {/* ╔══════════ 7.25 · TESTIMONIOS ══════════ ╗ */}
+      <section className="bg-slate-50 py-28 relative overflow-hidden">
+        <div className="absolute top-10 right-10 text-[280px] font-black text-blue-100/60 leading-none select-none pointer-events-none">"</div>
+        <div className="max-w-7xl mx-auto px-6 relative">
+          <div className="mb-16 reveal">
+            <p className="eyebrow mb-4">Opiniones</p>
+            <h2 className="text-5xl font-bold leading-[1.05] tracking-tight max-w-3xl">Lo que dicen <span className="text-grad">nuestros clientes</span>.</h2>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              {
+                q: "Entregaron memoria técnica y planos as-built completos. Pasamos la auditoría sin observaciones.",
+                r: "Jefe de Mantenimiento",
+                c: "Planta industrial · GBA Oeste",
+              },
+              {
+                q: "Respondieron un correctivo crítico en menos de 4 horas. El contrato con SLA se cumple tal cual.",
+                r: "Gerente de Operaciones",
+                c: "Centro logístico · GBA Sur",
+              },
+              {
+                q: "Coordinación impecable con otros rubros durante la obra. Entrega en tiempo y documentación en orden.",
+                r: "Project Manager",
+                c: "Edificio corporativo · CABA",
+              },
+            ].map((t, i) => (
+              <div key={i} className={`bg-white rounded-3xl p-8 shadow-sm border border-slate-200 lift reveal reveal-d${i + 1} relative`}>
+                <div className="flex gap-1 mb-5">
+                  {[...Array(5)].map((_, j) => (
+                    <svg key={j} className="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.956a1 1 0 00.95.69h4.161c.969 0 1.371 1.24.588 1.81l-3.367 2.447a1 1 0 00-.364 1.118l1.286 3.956c.3.922-.755 1.688-1.54 1.118l-3.366-2.447a1 1 0 00-1.176 0l-3.366 2.447c-.784.57-1.838-.197-1.539-1.118l1.286-3.956a1 1 0 00-.364-1.118L2.098 9.383c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.285-3.956z" /></svg>
+                  ))}
+                </div>
+                <p className="text-slate-700 text-lg leading-relaxed mb-6">{t.q}</p>
+                <div className="pt-5 border-t border-slate-100">
+                  <div className="font-bold text-slate-900 text-sm">{t.r}</div>
+                  <div className="text-slate-500 text-xs mt-1">{t.c}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ╔══════════ 7.5 · MARCAS QUE INSTALAMOS ══════════ ╗ */}
       <section className="bg-gradient-to-b from-white to-slate-50 py-24">
         <div className="max-w-7xl mx-auto px-6">
@@ -454,6 +534,33 @@ export default function Page() {
               <div key={s.l} className={`text-center md:px-6 reveal reveal-d${i + 1}`}>
                 <div className="text-white text-5xl lg:text-6xl font-bold mb-3"><Counter end={s.n} suffix={s.suf} /></div>
                 <div className="text-blue-300/70 text-xs uppercase tracking-[0.25em]">{s.l}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ╔══════════ 8.5 · NORMAS Y CERTIFICACIONES ══════════ ╗ */}
+      <section className="bg-white py-20 border-t border-slate-100">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-12 reveal">
+            <p className="eyebrow mb-4">Compliance y normativa</p>
+            <h2 className="text-3xl font-bold">Trabajamos bajo estándares técnicos y normativos</h2>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[
+              { t: "ASHRAE", d: "Estándares de climatización" },
+              { t: "IRAM", d: "Norma argentina vigente" },
+              { t: "Factura A", d: "Habilitación AFIP" },
+              { t: "Ley SRT", d: "Seguridad laboral vigente" },
+            ].map((n, i) => (
+              <div key={n.t} className={`text-center p-6 rounded-2xl bg-slate-50 border border-slate-200 reveal reveal-d${i + 1}`}>
+                <div className="w-12 h-12 mx-auto rounded-xl bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center mb-4 shadow-md shadow-blue-600/20">
+                  <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                </div>
+                <div className="font-bold text-slate-900">{n.t}</div>
+                <div className="text-xs text-slate-500 mt-1">{n.d}</div>
               </div>
             ))}
           </div>
@@ -527,6 +634,51 @@ export default function Page() {
                     </div>
                     <div className="text-lg font-bold text-slate-900 mb-1">{c.z}</div>
                     <p className="text-sm text-slate-500 leading-relaxed">{c.d}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ╔══════════ 9.75 · RECURSOS DESCARGABLES ══════════ ╗ */}
+      <section className="bg-gradient-to-br from-slate-950 via-blue-950 to-slate-950 py-24 relative overflow-hidden grain">
+        <div className="absolute inset-0 dots-pattern opacity-20" />
+        <div className="max-w-7xl mx-auto px-6 relative">
+          <div className="grid lg:grid-cols-12 gap-12 items-center">
+            <div className="lg:col-span-7 reveal">
+              <p className="eyebrow-white mb-4">Recursos técnicos</p>
+              <h2 className="text-4xl lg:text-5xl font-bold text-white leading-[1.05] tracking-tight mb-5">
+                Brochure técnico para tu <span className="text-grad">área de compras</span>.
+              </h2>
+              <p className="text-blue-100/60 text-lg leading-relaxed mb-8 max-w-xl">
+                Descargá nuestro brochure institucional con fichas técnicas,
+                casos de éxito y alcance de servicios para compartir internamente.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <a href="#cotizacion" className="bg-white text-slate-900 px-7 py-3.5 rounded-lg font-bold text-sm hover:bg-blue-50 transition flex items-center gap-2 shadow-xl">
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                  Solicitar brochure PDF
+                </a>
+                <a href="mailto:serviclima@serviclim.com.ar" className="border border-blue-800/70 text-blue-100 hover:text-white hover:border-blue-400 px-7 py-3.5 rounded-lg font-semibold text-sm transition flex items-center gap-2">
+                  Consultar por email
+                </a>
+              </div>
+            </div>
+
+            <div className="lg:col-span-5 reveal reveal-d1">
+              <div className="grid grid-cols-2 gap-3">
+                {[
+                  { t: "Brochure institucional", s: "PDF · 2.4MB", ico: "M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" },
+                  { t: "Ficha técnica VRF", s: "PDF · 1.1MB", ico: "M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" },
+                  { t: "Casos de éxito", s: "PDF · 3.2MB", ico: "M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" },
+                  { t: "Programa de mantenimiento", s: "PDF · 900KB", ico: "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" },
+                ].map((r, i) => (
+                  <div key={r.t} className={`group bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-5 hover:bg-white/10 transition-all cursor-pointer reveal reveal-d${i + 1}`}>
+                    <svg className="w-6 h-6 text-blue-400 mb-3 group-hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}><path d={r.ico} strokeLinecap="round" strokeLinejoin="round" /></svg>
+                    <div className="text-white font-semibold text-sm mb-1">{r.t}</div>
+                    <div className="text-blue-300/50 text-[11px] uppercase tracking-widest">{r.s}</div>
                   </div>
                 ))}
               </div>
