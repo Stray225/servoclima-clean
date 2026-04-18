@@ -12,7 +12,7 @@ export default function Navbar() {
         {/* IZQUIERDA: LOGO + TEXTO */}
         <Link href="/" className="flex items-center gap-3">
           <Image
-            src="/serviclimas-logo.png"
+            src="/serviclimas-logo2.png"
             alt="Serviclimas"
             width={320}
             height={90}

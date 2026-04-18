@@ -11,7 +11,7 @@ export default function NavbarPremium() {
         {/* LOGO */}
         <Link href="/" className="flex items-center gap-3">
           <Image
-            src="/serviclimas-logo.png"
+            src="/serviclimas-logo2.png"
             alt="Serviclimas"
             width={180}
             height={50}

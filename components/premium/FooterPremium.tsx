@@ -29,7 +29,7 @@ export default function FooterPremium() {
 
         <div>
           <Image
-            src="/serviclimas-logo.png"
+            src="/serviclimas-logo2.png"
             alt="Serviclimas"
             width={160}
             height={45}

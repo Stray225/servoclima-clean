@@ -6,13 +6,28 @@ export default function ContactForm() {
   const [loading, setLoading] = useState(false);
   const [sent, setSent] = useState(false);
 
+  const [error, setError] = useState("");
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
-    await new Promise((res) => setTimeout(res, 1200));
-    setLoading(false);
-    setSent(true);
-    e.currentTarget.reset();
+    setError("");
+    const form = e.currentTarget;
+    const data = Object.fromEntries(new FormData(form));
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      if (!res.ok) throw new Error();
+      setSent(true);
+      form.reset();
+    } catch {
+      setError("Hubo un error al enviar. Llamanos al (011) 2173-2871.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -104,6 +119,9 @@ export default function ContactForm() {
           <p role="status" className="text-green-600 text-center font-medium">
             Solicitud enviada correctamente. Nos comunicaremos a la brevedad.
           </p>
+        )}
+        {error && (
+          <p role="alert" className="text-red-600 text-center text-sm">{error}</p>
         )}
       </form>
     </div>
