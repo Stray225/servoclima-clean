@@ -14,9 +14,9 @@ export default function Navbar() {
           <Image
             src="/serviclimas-logo.png"
             alt="Serviclimas"
-            width={160}
-            height={45}
-            className="h-10 w-auto object-contain mix-blend-multiply dark:mix-blend-screen"
+            width={220}
+            height={65}
+            className="h-14 w-auto object-contain mix-blend-multiply dark:mix-blend-screen"
             priority
           />
 
