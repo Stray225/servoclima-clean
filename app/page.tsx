@@ -12,14 +12,14 @@ const TEL = "+541121732871";
 export const metadata: Metadata = {
   title: "Instalación y service de aire acondicionado · CABA y GBA",
   description:
-    "Instalación de splits, VRF/VRV y sistemas centrales de aire acondicionado en CABA y GBA. Service, mantenimiento y reparación para empresas y hogares. Presupuesto sin cargo.",
+    "Instalación de sistemas de climatización para industrias, fábricas y edificios corporativos en CABA y GBA. VRF/VRV, chillers, splits y proyectos termomecánicos. Agente oficial Surrey.",
   alternates: {
     canonical: "https://serviclim.ar",
   },
   openGraph: {
     title: "Serviclima | Instalación y service de aire acondicionado · CABA y GBA",
     description:
-      "Instalación de splits, VRF/VRV y sistemas centrales de aire acondicionado en CABA y GBA. Service y mantenimiento para empresas y hogares.",
+      "Instalación, service y mantenimiento de climatización industrial y corporativa en CABA y GBA. VRF/VRV, chillers y proyectos termomecánicos.",
     url: "https://serviclim.ar",
   },
 };
@@ -29,58 +29,85 @@ export default function Page() {
     <main className="bg-slate-100 text-slate-900 dark:bg-slate-950 dark:text-slate-50">
 
       {/* ================= HERO ================= */}
-      <section aria-label="Presentación" className="relative bg-gradient-to-br from-blue-950 via-blue-900 to-slate-900 overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(59,130,246,0.15),_transparent_60%)] pointer-events-none" />
-        <div className="max-w-7xl mx-auto px-6 py-24 grid lg:grid-cols-2 gap-16 items-center">
+      <section aria-label="Presentación" className="relative bg-blue-950 overflow-hidden">
 
-          <div>
-            {/* Logo en hero */}
-            <div className="inline-block bg-white rounded-xl px-4 py-2 mb-7 shadow-md">
-              <Image src="/serviclimas-logo-trimmed.png" width={180} height={52} className="h-10 w-auto" alt="Serviclimas" />
+        {/* Dot texture */}
+        <div className="absolute inset-0 pointer-events-none" style={{backgroundImage: 'radial-gradient(circle, rgba(99,149,255,0.10) 1px, transparent 1px)', backgroundSize: '30px 30px'}} />
+        {/* Top accent line */}
+        <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-blue-500 to-transparent" />
+
+        <div className="max-w-7xl mx-auto px-6 pt-10 pb-16">
+
+          {/* ── Brand identity bar ── */}
+          <div className="flex items-center gap-5 mb-12 pb-8 border-b border-blue-900/70">
+            <div className="bg-white rounded-xl px-4 py-2 shadow-lg flex-shrink-0">
+              <Image src="/serviclimas-logo-trimmed.png" width={160} height={48} className="h-10 w-auto" alt="Serviclimas" />
             </div>
-
-            <p className="inline-flex items-center gap-2 text-blue-300 text-sm font-medium mb-6 border border-blue-700/50 rounded-full px-4 py-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse" />
-              Empresarial · Comercial · Residencial selectivo
-            </p>
-
-            <h1 className="text-5xl lg:text-6xl font-bold text-white leading-tight">
-              Climatización <span className="text-blue-400">profesional</span><br />
-              pensada para operar
-            </h1>
-
-            <p className="mt-6 text-lg text-blue-100/80 max-w-xl leading-relaxed">
-              Ingeniería en climatización orientada a empresas, industrias y
-              edificios corporativos. Diseñamos sistemas confiables, eficientes
-              y preparados para operación continua.
-            </p>
-
-            <div className="mt-10 flex flex-wrap gap-4">
-              <a
-                href="#cotizacion"
-                className="group bg-white text-blue-900 px-7 py-3.5 rounded-lg font-semibold hover:bg-blue-50 transition flex items-center gap-2 shadow-lg"
-              >
-                Solicitar cotización
-                <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-              </a>
-              <a
-                href={`https://wa.me/${WHATS}?text=Hola%2C%20quiero%20consultar%20sobre%20climatizaci%C3%B3n.`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-green-500 hover:bg-green-600 text-white px-7 py-3.5 rounded-lg font-semibold transition flex items-center gap-2"
-              >
-                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.115 1.523 5.847L.057 23.571a.75.75 0 00.918.919l5.801-1.484A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.867 0-3.617-.484-5.135-1.336l-.363-.21-3.795.97.999-3.697-.229-.374A9.97 9.97 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
-                WhatsApp
-              </a>
+            <div className="flex-1 h-px bg-gradient-to-r from-blue-800/80 to-transparent" />
+            <div className="hidden md:flex items-center gap-3 text-blue-500/70 text-xs font-semibold tracking-widest uppercase flex-shrink-0">
+              <span>Climatización Industrial</span>
+              <span className="w-1 h-1 rounded-full bg-blue-700" />
+              <span>CABA · GBA</span>
+              <span className="w-1 h-1 rounded-full bg-blue-700" />
+              <span>Agente Surrey</span>
             </div>
           </div>
 
-          <div className="rounded-2xl overflow-hidden shadow-2xl border border-white/10 ring-1 ring-white/5">
-            <HeroSlider />
-          </div>
+          {/* ── Main grid ── */}
+          <div className="grid lg:grid-cols-5 gap-12 items-center">
 
+            {/* Texto: 3/5 */}
+            <div className="lg:col-span-3">
+              <div className="inline-flex items-center gap-2 text-blue-300 text-xs font-semibold mb-6 border border-blue-800 rounded-full px-4 py-1.5 bg-blue-900/40">
+                <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse" />
+                Industria · Corporativo · Gran Escala
+              </div>
+
+              <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight mb-6">
+                Instalamos donde<br />
+                <span className="text-blue-400">la operación</span><br />
+                no puede detenerse
+              </h1>
+
+              <p className="text-blue-100/70 max-w-lg leading-relaxed mb-8">
+                Ingeniería, instalación y mantenimiento de sistemas de climatización
+                para fábricas, plantas industriales, edificios corporativos y grandes proyectos
+                en CABA y GBA. Más de 20 años, más de 500 instalaciones.
+              </p>
+
+              <div className="flex flex-wrap gap-4 mb-10">
+                <a href="#cotizacion" className="group bg-white text-blue-900 px-7 py-3.5 rounded-lg font-bold hover:bg-blue-50 transition flex items-center gap-2 shadow-xl text-sm">
+                  Solicitar cotización
+                  <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                </a>
+                <a href="tel:+541121732871" className="border border-blue-700/80 text-blue-200 hover:text-white hover:border-blue-400 px-7 py-3.5 rounded-lg font-semibold transition text-sm flex items-center gap-2">
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+                  (011) 2173-2871
+                </a>
+              </div>
+
+              {/* Trust signals */}
+              <div className="flex flex-wrap gap-5 text-xs text-blue-400/80">
+                {["Documentación técnica completa", "Contratos con SLA definido", "Factura A garantizada"].map(t => (
+                  <span key={t} className="flex items-center gap-1.5">
+                    <svg className="w-3.5 h-3.5 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" /></svg>
+                    {t}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Slider: 2/5 */}
+            <div className="lg:col-span-2">
+              <div className="rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/10 ring-offset-1 ring-offset-blue-950">
+                <HeroSlider />
+              </div>
+            </div>
+
+          </div>
         </div>
-        <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white/5 to-transparent pointer-events-none" />
+
+        <div className="absolute bottom-0 inset-x-0 h-12 bg-gradient-to-t from-slate-900/30 to-transparent pointer-events-none" />
       </section>
 
       {/* ================= STATS ================= */}
@@ -114,9 +141,9 @@ export default function Page() {
             <h2 className="text-4xl font-bold mb-4">Servicios de climatización</h2>
             <div className="w-12 h-1 bg-blue-600 rounded mb-5" />
             <p className="text-slate-600 dark:text-slate-300 max-w-2xl">
-              Instalación, service y mantenimiento de aire acondicionado para
-              entornos corporativos, comerciales e industriales. También instalamos
-              splits y multisplits para hogares y oficinas en CABA y GBA.
+              Instalación, service y mantenimiento de sistemas de climatización para
+              fábricas, plantas industriales, edificios corporativos, parques logísticos
+              y centros comerciales en CABA y GBA.
             </p>
           </div>
 
